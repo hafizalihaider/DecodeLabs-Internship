@@ -1,0 +1,33 @@
+From: noreply@github.com
+To: developer@email.com
+Subject: New Sign-in to Your GitHub Account
+
+Hello Muhammad Ali Haider,
+
+We noticed a successful sign-in to your GitHub account.
+
+Sign-in Details
+
+Location:
+Lahore, Punjab, Pakistan
+
+Device:
+Windows 11
+Google Chrome
+
+Time:
+August 15, 2026
+10:42 PM (PKT)
+
+If this was you, no further action is required.
+
+If you do not recognize this activity, please secure your account immediately by visiting your GitHub Security Settings.
+
+Official GitHub Security Page:
+https://github.com/settings/security
+
+For your protection, GitHub will never ask you to reply to an email with your password or two-factor authentication codes.
+
+Thank you for helping keep your account secure.
+
+GitHub Security Team

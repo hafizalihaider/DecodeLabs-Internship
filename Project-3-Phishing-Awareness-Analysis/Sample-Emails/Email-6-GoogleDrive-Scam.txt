@@ -1,0 +1,29 @@
+From: sharing@google-drive-support.net
+To: employee@email.com
+Subject: Confidential Document Shared With You
+
+Hello,
+
+A confidential document has been shared with you through Google Drive.
+
+Document Name:
+Company Financial Report 2026.pdf
+
+Due to security restrictions, you must verify your Google account before viewing the document.
+
+Open Document:
+
+http://google-drive-secure-access.net/document
+
+You will be asked to sign in using:
+
+• Gmail Address
+• Gmail Password
+
+This shared document will expire within 24 hours.
+
+Failure to access the document before the deadline will permanently remove your access.
+
+Thank you,
+
+Google Drive Document Sharing Team

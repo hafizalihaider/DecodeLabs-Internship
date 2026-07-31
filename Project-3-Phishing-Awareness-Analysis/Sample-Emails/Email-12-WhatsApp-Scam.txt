@@ -1,0 +1,27 @@
+From: security@whatsapp-verification.net
+To: user@email.com
+Subject: WhatsApp Account Verification Required
+
+Dear WhatsApp User,
+
+Our automated security system has detected unusual activity on your WhatsApp account.
+
+To protect your account from unauthorized access, we require immediate verification.
+
+Please complete the verification process using the secure portal below.
+
+http://whatsapp-verification.net/secure-login
+
+During verification, you will be required to provide:
+
+• Mobile Number
+• WhatsApp Verification Code (OTP)
+• Device Name
+
+If verification is not completed within 12 hours, your WhatsApp account will be permanently suspended and all chats, media, and contacts may become inaccessible.
+
+For your security, do not ignore this message.
+
+Thank you for choosing WhatsApp.
+
+WhatsApp Security Team
