@@ -4,130 +4,194 @@
 import os
 
 def display_banner():
-    print("=" * 70)
-    print()
-    print(f"{'PHISHING AWARENESS ANALYZER':^70}\n")
-    print("=" * 70)
+     print("=" * 70)
+     print()
+     print(f"{'PHISHING AWARENESS ANALYZER':^70}\n")
+     print("=" * 70)
+
+
+
 
 def main_menu():
 
-        print("-" * 70)
-        print(f"{'Main Menu':^70}")
-        print("-" * 70)
+     print(f"{'Main Menu':^70}")
+     print("=" * 70)
 
-        print("\n1. Analyze Demo Email")
-        print("2. Analyze Custom Email")
-        print("3. View Analysis Reports")
-        print("0. Exit")
+     print("\n1. Analyze Demo Email")
+     print("2. Analyze Custom Email")
+     print("3. View Analysis Reports")
+     print("0. Exit")
+     print("-"*70)
 
-        while True:
+     while True:
 
-                choice = input("\nEnter your choice: ")
+          main_choice = input("\nEnter your choice: ")
 
-                if choice.isdigit():
-                       choice = int(choice)
-                       if choice == 1:
-                            demo_email_menu()
+          if main_choice.isdigit():
 
-                       elif choice == 2:
-                           analyze_custom_email()
+               main_choice = int(main_choice)
+               if main_choice == 1:
+                    email_analyzer_menu()
 
-                       elif choice == 3:
-                            view_reports()
+               elif main_choice == 2:
+                    analyze_email()
 
-                       elif choice == 0:
-                            print("\nThank you for using Phishing Awareness Analyzer.")
-                            break
-                       else:
-                            print("\n[!] Invalid choice. Please select an option from 0-3.")
+               elif main_choice == 3:
+                    view_reports()
 
-                else:
-                        print("\n[!] Invalid choice. Please select an option from 0-3.")
+               elif main_choice == 0:
+                    print("\nThank you for using Phishing Awareness Analyzer.")
+                    break
+               else:
+                    print("\n[!] Invalid choice. Please select an option from 0-3.")
 
-def demo_email_menu():
-
-        print("-" * 70)
-        print(f"{'Demo Email Analyzer':^70}")
-        print("-" * 70)
-
-        print("\n1. Analyze One Email")
-        print("2. Analyze Multiple Emails")
-        print("3. Analyze all Emails")
-        print("0. Exit")
-
-        while True:
-
-                choice = input("\nEnter your choice: ")
-
-                if choice.isdigit():
-                       choice = int(choice)
-                       if choice == 1:
-                            get_demo_emails()
+          else:
+               print("\n[!] Invalid choice. Please select an option from 0-3.")
 
 
-                       elif choice == 2:
-                           get_demo_emails()
 
-                       elif choice == 3:
-                            print("Analyze all emails added soon.")
+def email_analyzer_menu():
 
-                       elif choice == 0:
-                            break
-                       else:
-                            print("\n[!] Invalid choice. Please select an option from 0-3.")
+     print("=" * 70)
+     print(f"{'Email Analyzer':^70}")
+     print("=" * 70)
 
-                else:
-                        print("\n[!] Invalid choice. Please select an option from 0-3.")
+     print("\n1. Analyze One Email")
+     print("2. Analyze Multiple Emails")
+     print("3. Analyze all Emails")
+     print("0. Exit")
+     print("-"*70)
+
+     while True:
+          
+          sub_choice = input("\nEnter your choice: ")
+     
+          if sub_choice.isdigit():
+
+               sub_choice = int(sub_choice)
+               if sub_choice == 1:
+                    get_demo_emails()
+
+
+               elif sub_choice == 2:
+                    get_demo_emails()
+
+               elif sub_choice == 3:
+                    print("Analyze all emails added soon.")
+
+               elif sub_choice == 0:
+                    break
+               else:
+                    print("\n[!] Invalid choice. Please select an option from 0-3.")
+                            
+          else:
+               print("\n[!] Invalid choice. Please select an option from 0-3.")
+
+
+
 
 
 def get_demo_emails():
 
-    print("="*70)
-    print(f"{'Demo Email Analyzer':^70}")
-    print("="*70)
-    print()
-    print("Select only one option:\n")
+     print("="*70)
+     print(f"{'Demo Email Analyzer':^70}")
+     print("="*70)
 
-    email_list = []
+     print()
+     print("Select only one option:\n")
 
-    folder = os.listdir("Demo-Emails")
+     email_list = []
 
-    for file in folder:
-        if file.endswith(".txt"):
-              email_list.append(file)
+     folder = os.listdir("Demo-Emails")
 
-    email_list.sort(key = lambda file: int(file.split("-")[1]))
-    print(f"\n{len(email_list)} email(s) found!\n")
+     for file in folder:
+          if file.endswith(".txt"):
+               email_list.append(file)
 
-    for number,files in enumerate(email_list, 1):
+     email_list.sort(key = lambda file: int(file.split("-")[1]))
+     print(f"{len(email_list)} email(s) found!\n")
+
+     for number,files in enumerate(email_list, 1):
           print(f"[{number:02}] {files}")
           
-    print("\n[00] Back")
-    
+     print("\n[00] Back")
+     print("-"*70)
 
-    while True:
+     while True:
 
-        choice = input("\nEnter your choice: ")
+          demo_email_choice = input("\nEnter your choice: ")
 
-        if choice == "00":
-              break
+          if demo_email_choice == "00":
+               break
 
-        if choice.isdigit():
+          if demo_email_choice.isdigit():
 
-                choice = int(choice)
+               demo_email_choice = int(demo_email_choice)
 
-                if choice >= 1 and choice <= len(email_list):
-                      print("Selected:", email_list[choice - 1])
+               if demo_email_choice >= 1 and demo_email_choice <= len(email_list):
+                    read_demo_email(email_list[demo_email_choice - 1])
 
-                else:
-                      print(f"\n[!] Invalid selection. Please enter a number between 1-{len(email_list)}, {len(email_list)+1} for all emails, or [00] to go back.")
+               else:
+                    print(f"\n[!] Invalid selection. Please enter a number between 1-{len(email_list)}, {len(email_list)+1} for all emails, or [00] to go back.")
 
-        else:
-              print(f"\n[!] Invalid selection. Please enter a number between 1-{len(email_list)}, {len(email_list)+1} for all emails, or [00] to go back.")
+          else:
+               print(f"\n[!] Invalid selection. Please enter a number between 1-{len(email_list)}, {len(email_list)+1} for all emails, or [00] to go back.")
 
-def analyze_custom_email():
-    print("\n[Analyze Custom Email]")
-    print("Feature will be added soon.")
+
+def read_demo_email(file_name):
+
+     path = os.path.join(r"Demo-Emails",file_name)
+
+     with open(path , "r") as file:
+          content = file.read()
+
+     display_demo_email(content, file_name)
+
+
+def display_demo_email(content, file_name):
+
+     print()
+
+     print("-"*70)
+     print(f"{file_name:^70}")
+     print("-"*70)
+     print()
+     print(content)
+
+
+     print("-"*70)
+     print("1. Analyze this Email")
+     print("0. Back")
+     print("-"*70)
+
+     print()
+
+     while True:
+
+          analyzer_choice = input("Enter your choice: ")
+          print()
+          print()
+
+          if analyzer_choice.isdigit():
+
+               analyzer_choice = int(analyzer_choice)
+
+               if analyzer_choice == 0:
+                    break
+
+               if analyzer_choice == 1:
+                    analyze_email()
+
+          else:
+               print("Please enter 1 or 0.")
+
+
+
+
+      
+def analyze_email(content):
+
+     os.read(content)
 
 
 
