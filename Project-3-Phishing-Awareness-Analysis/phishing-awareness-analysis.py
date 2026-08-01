@@ -180,8 +180,7 @@ def display_demo_email(content, file_name):
                     break
 
                if analyzer_choice == 1:
-                    analyze_email()
-
+                    check_keywords(content)
           else:
                print("Please enter 1 or 0.")
 
@@ -189,9 +188,28 @@ def display_demo_email(content, file_name):
 
 
       
-def analyze_email(content):
+def check_keywords(content):
 
-     os.read(content)
+    content = content.lower()
+    found = False
+    keyword_count = 0
+    matched_keywords = []
+
+    with open("Database/suspicious_keywords.txt" , "r") as file:
+        for line in file:
+            keyword = line.strip()
+            if keyword in content:
+                found = True
+                keyword_count += 1
+                matched_keywords.append(keyword)
+
+        if found:
+            print("Suspicious keywords found:",keyword_count)
+            for keyword in matched_keywords:
+                print("-",keyword)
+                
+        else:
+            print("No suspicious keywords found.")
 
 
 
