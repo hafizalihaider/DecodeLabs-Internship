@@ -1,0 +1,16 @@
+attachment
+attached
+attach
+invoice.pdf
+document.pdf
+payment.pdf
+resume.pdf
+report.pdf
+.zip
+.rar
+.exe
+.doc
+.docx
+.xls
+.xlsx
+.pdf

@@ -35,3 +35,13 @@ analyze_email(content)
 ├── classify_email(...)
 ├── save_report(...)
 └── move_email(...)
+
+
+Detector	Risk Points
+Suspicious keywords	+15
+Suspicious URLs	+30
+Suspicious sender/domain	+40
+Attachment	+15
+Poor grammar	+10
+Urgency	+15
+Spoofing	+50

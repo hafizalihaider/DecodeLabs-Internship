@@ -1,0 +1,43 @@
+# DEADLINES
+within 24 hours
+within 12 hours
+within 48 hours
+today only
+expires today
+deadline
+before midnight
+immediately
+urgent
+urgently
+right now
+act now
+respond now
+time is running out
+limited time
+offer expires
+
+# ACCOUNT THREATS
+account suspended
+account locked
+account disabled
+account restricted
+security alert
+unauthorized login
+verify immediately
+confirm immediately
+failure to respond
+your account will be closed
+your account will be terminated
+
+# PAYMENT THREATS
+payment failed
+payment overdue
+invoice overdue
+pay immediately
+
+# REWARD PRESSURE
+claim now
+claim immediately
+claim your prize
+claim your reward
+limited offer

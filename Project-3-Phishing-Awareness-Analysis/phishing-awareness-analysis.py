@@ -6,6 +6,9 @@ import os
 KEYWORDS_FILE = "Database/suspicious_keywords.txt"
 TRUSTED_DOMAINS = "Database/trusted_domains.txt"
 URL_PATTERNS = "Database/url_patterns.txt"
+ATTACHMENT_KEYWORDS = "Database/attachment_keywords.txt"
+GRAMMAR_PATTERNS = "Database/grammar_patterns.txt"
+URGENCY_PATTERNS = "Database/urgency_patterns.txt"
 
 
 def display_banner():
@@ -13,9 +16,6 @@ def display_banner():
      print()
      print(f"{'PHISHING AWARENESS ANALYZER':^70}\n")
      print("=" * 70)
-
-
-
 
 def main_menu():
 
@@ -54,7 +54,6 @@ def main_menu():
                print("\n[!] Invalid choice. Please select an option from 0-3.")
 
 
-
 def email_analyzer_menu():
 
      print("=" * 70)
@@ -91,9 +90,6 @@ def email_analyzer_menu():
                             
           else:
                print("\n[!] Invalid choice. Please select an option from 0-3.")
-
-
-
 
 
 def get_demo_emails():
@@ -189,9 +185,6 @@ def display_demo_email(content, file_name):
           else:
                print("Please enter 1 or 0.")
 
-
-
-
       
 def check_keywords(content):
 
@@ -209,17 +202,9 @@ def check_keywords(content):
                     matched_keywords.append(keyword)
 
           if matched_keywords:
-            
-               print("\nSuspicious keywords found:",len(matched_keywords))
-
-               for keyword in matched_keywords:
-                
-                    print("-",keyword)
-
                return matched_keywords
                 
           else:
-               print("\nNo suspicious keywords found.")
                return []
 
 
@@ -246,13 +231,10 @@ def check_urls(content):
                               matched_urls.append(word)
 
           if matched_urls:
-               print("\nSuspicious url found:",len(matched_urls))
-
-               for url in matched_urls:
-                    print("-",url)
+               return matched_urls
                 
           else:
-               print("\nNo suspicious url found.")
+               return []
 
 
 def check_sender(content):
@@ -270,15 +252,9 @@ def check_sender(content):
                matched_senders.append(sender)
 
      if matched_senders:
-          print("\nSender email(s) found:",len(matched_senders))
-
-          for sender in matched_senders:
-               print("-",sender)
-
           return matched_senders
 
      else:
-          print("\nNo sender email(s) found.")
           return[]
 
 
@@ -294,10 +270,10 @@ def check_domain(sender):
 
                trusted_database.append(line.strip().lower())
 
-          for line in sender:
+     for line in sender:
 
-               if "@" not in line:
-                    continue
+          if "@" not in line:
+               continue
 
           domain = line.split("@")[1]
 
@@ -311,27 +287,120 @@ def check_domain(sender):
 
 
      if trusted_domains:
-          print("\nTrusted domain(s) found:",len(trusted_domains))
-
-          for domain in trusted_domains:
-               print("-",domain)
+          return trusted_domains
 
      if suspicious_domains:
-          print("\nSuspicious domain(s) found:",len(suspicious_domains))
-
-          for domain in suspicious_domains:
-               print("-",domain)
+          return suspicious_domains
 
 
+def check_attachments(content):
+
+     content = content.lower()
+     matched_attachments = []
+
+     with open(ATTACHMENT_KEYWORDS , "r") as file:
+        
+          for line in file:
+            
+               attachments = line.strip()
+
+               if attachments in content and attachments not in matched_attachments:
+                    matched_attachments.append(attachments)
+
+     if matched_attachments:
+          return matched_attachments
+               
+     else:
+          return []
+
+
+def check_grammar(content):
+
+     content = content.lower()
+     matched_grammar = []
+
+     with open(GRAMMAR_PATTERNS , "r") as file:
+        
+          for line in file:
+            
+               pattern = line.strip().lower()
+
+               if not pattern or pattern.startswith("#"):
+                    continue
+
+               if pattern in content and pattern not in matched_grammar:
+                    matched_grammar.append(pattern)
+
+     if matched_grammar:
+          return matched_grammar
+               
+     else:
+          return []
+
+
+def check_urgency(content):
+
+     content = content.lower()
+
+     matched_urgency = []
+
+     with open(URGENCY_PATTERNS, "r") as file:
+
+          for line in file:
+
+               pattern = line.strip().lower()
+
+               if not pattern or pattern.startswith("#"):
+                    continue
+
+               if pattern in content and pattern not in matched_urgency:
+                    matched_urgency.append(pattern)
+
+     if matched_urgency:
+          return matched_urgency
+
+     else:
+          return []
+
+           
 def analyze_email(content):
 
-     check_keywords(content)
-     check_urls(content)
+     keywords = check_keywords(content)
+     urls = check_urls(content)
+     senders = check_sender(content)
+     domains = check_domain(senders)
+     attachments = check_attachments(content)
+     grammar = check_grammar(content)
+     urgency = check_urgency(content)
 
-     sender = check_sender(content)
+     print("\nSuspicious keywords:", len(keywords))
+     for keyword in keywords:
+          print("-", keyword)
 
-     check_domain(sender)
+     print("\nSuspicious URLs:", len(urls))
+     for url in urls:
+          print("-", url)
 
+     print("\nSender(s):", len(senders))
+     for sender in senders:
+          print("-", sender)
+
+     print("\nSuspicious domains:", len(domains))
+     for domain in domains:
+          print("-", domain)
+
+     print("\nSuspicious Attachment:", len(attachments))
+     for attachment in attachments:
+          print("-", attachment)
+
+     print("\nSuspicious writing patterns found:", len(grammar))
+     for word in grammar:
+          print("-", word)
+
+     print("\nUrgency indicators found:", len(urgency))
+
+     for pattern in urgency:
+          print("-", pattern)
 
 display_banner()
 main_menu()
