@@ -1,0 +1,55 @@
+# ==========================
+# SPELLING MISTAKES
+# ==========================
+
+recieve
+acount
+accunt
+verfication
+immediatly
+succesfully
+congratulation
+updation
+loging
+paymant
+securty
+authentification
+banking detail
+
+# ==========================
+# GRAMMAR MISTAKES
+# ==========================
+
+your account has been suspend
+your account has been lock
+your payment has been decline
+your package has been hold
+your account is temporary suspend
+please kindly
+kindly do
+kindly update your informations
+confirm your informations
+click here immediately
+failure to respond
+act now immediately
+
+# ==========================
+# SUSPICIOUS PHRASES
+# ==========================
+
+dear valued customer
+dear user
+dear client
+dear winner
+congratulation
+claim your reward
+verify immediately
+respond immediately
+
+# ==========================
+# EXCESSIVE PUNCTUATION
+# ==========================
+
+!!!
+???
+......

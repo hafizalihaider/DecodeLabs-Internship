@@ -1,0 +1,29 @@
+From: security@paypal-secure-login.net
+To: customer@email.com
+Subject: URGENT - Verify Your PayPal Account Immediately
+
+Dear Customer,
+
+We detected unusual activity on your PayPal account.
+
+Your account has been temporarily suspended for security reasons.
+
+To restore your account, you must verify your identity immediately.
+
+Click the secure verification link below:
+
+http://paypal-secure-login.net/verify-account
+
+You will be required to enter:
+
+• PayPal Email
+• Password
+• Credit Card Number
+• CVV
+• Expiry Date
+
+Failure to verify your account within 24 hours will result in permanent account suspension.
+
+Thank you for your cooperation.
+
+PayPal Security Team

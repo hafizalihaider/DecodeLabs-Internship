@@ -1,0 +1,38 @@
+From: delivery@dhl-express-support.net
+To: customer@email.com
+Subject: Delivery Failed - Immediate Action Required
+
+Dear Customer,
+
+We attempted to deliver your package today, but unfortunately the delivery could not be completed because your shipping information could not be verified.
+
+Shipment Details
+
+Courier:
+DHL Express
+
+Tracking Number:
+DHL-784512963
+
+Current Status:
+Pending Delivery
+
+To reschedule your delivery, please confirm your shipping information and pay the outstanding customs processing fee of $2.99.
+
+Complete Verification Here:
+
+http://dhl-express-support.net/track-package
+
+During verification you will be asked to provide:
+
+• Full Name
+• Shipping Address
+• Phone Number
+• Debit/Credit Card Information
+
+If payment is not completed within 24 hours, your package will be returned to the sender.
+
+Thank you for choosing DHL Express.
+
+Customer Delivery Support
+DHL Express
