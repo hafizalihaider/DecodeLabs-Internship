@@ -1,20 +1,125 @@
 urgent
+immediately
+action required
 verify
-password
-click
+verification
+confirm
+confirmation
 account
-bank
+suspended
+suspension
+disabled
+locked
+security alert
+unusual activity
+login
+password
+username
+credential
+update
+reset
+recover
+claim
+winner
+winning
+prize
+reward
+gift
+free
+giveaway
+bonus
+offer
+limited time
+expire
+expiration
+deadline
+last chance
+congratulations
+selected
+selected winner
+lottery
+jackpot
+cash
+refund
 payment
 invoice
-security
-login
-confirm
-winner
-lottery
+transaction
+fee
+processing fee
+verification fee
+send money
+transfer
+wallet
+cryptocurrency
 crypto
-gift
-limited
-suspended
-immediately
+bitcoin
+btc
+ethereum
+eth
+investment
+profit
+guaranteed
+double your money
+earn money
+click here
+open link
+download
+attachment
+document
+scan
+invoice
+bank
+paypal
+amazon
+microsoft
+google
+apple
+dhl
+delivery
+tracking
+tax refund
+government
+legal notice
+court
+fine
+penalty
+login
+signin
+sign-in
+verify
+verification
+confirm
+confirmation
+account
+secure
+security
 update
+validate
+auth
+authentication
+password
+reset
+recover
+unlock
+support
+claim
+reward
+gift
+giveaway
+prize
+winner
+bonus
+payment
+billing
+invoice
+transaction
+wallet
+crypto
+bitcoin
+ethereum
 free
+offer
+promo
+download
+attachment
+document

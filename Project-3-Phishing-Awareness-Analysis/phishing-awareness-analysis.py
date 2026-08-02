@@ -3,6 +3,11 @@
 # ==========================================
 import os
 
+KEYWORDS_FILE = "Database/suspicious_keywords.txt"
+TRUSTED_DOMAINS = "Database/trusted_domains.txt"
+URL_PATTERNS = "Database/url_patterns.txt"
+
+
 def display_banner():
      print("=" * 70)
      print()
@@ -180,7 +185,7 @@ def display_demo_email(content, file_name):
                     break
 
                if analyzer_choice == 1:
-                    check_keywords(content)
+                    analyze_email(content)
           else:
                print("Please enter 1 or 0.")
 
@@ -190,32 +195,142 @@ def display_demo_email(content, file_name):
       
 def check_keywords(content):
 
-    content = content.lower()
-    found = False
-    keyword_count = 0
-    matched_keywords = []
+     content = content.lower()
+     matched_keywords = []
 
-    with open("Database/suspicious_keywords.txt" , "r") as file:
-        for line in file:
-            keyword = line.strip()
-            if keyword in content:
-                found = True
-                keyword_count += 1
-                matched_keywords.append(keyword)
+     with open(KEYWORDS_FILE , "r") as file:
+        
+          for line in file:
+            
+               keyword = line.strip()
 
-        if found:
-            print("Suspicious keywords found:",keyword_count)
-            for keyword in matched_keywords:
-                print("-",keyword)
+               if keyword in content:
+
+                    matched_keywords.append(keyword)
+
+          if matched_keywords:
+            
+               print("\nSuspicious keywords found:",len(matched_keywords))
+
+               for keyword in matched_keywords:
                 
-        else:
-            print("No suspicious keywords found.")
+                    print("-",keyword)
+
+               return matched_keywords
+                
+          else:
+               print("\nNo suspicious keywords found.")
+               return []
 
 
 
-def view_reports():
-    print("\n[View Analysis Reports]")
-    print("Feature will be added soon.")
+def check_urls(content):
+
+     content = content.lower()
+
+     matched_urls = []
+     words = content.split()
+
+     with open(URL_PATTERNS , "r") as file:
+
+          for line in file:
+
+               url = line.strip()
+
+               for word in words:
+
+                    if url in word:
+
+                         if word not in matched_urls:
+
+                              matched_urls.append(word)
+
+          if matched_urls:
+               print("\nSuspicious url found:",len(matched_urls))
+
+               for url in matched_urls:
+                    print("-",url)
+                
+          else:
+               print("\nNo suspicious url found.")
+
+
+def check_sender(content):
+
+     content = content.lower()
+
+     matched_senders = []
+
+     for line in content.splitlines():
+
+          if line.startswith("from:"):
+
+               sender = line.replace("from:","").strip()
+
+               matched_senders.append(sender)
+
+     if matched_senders:
+          print("\nSender email(s) found:",len(matched_senders))
+
+          for sender in matched_senders:
+               print("-",sender)
+
+          return matched_senders
+
+     else:
+          print("\nNo sender email(s) found.")
+          return[]
+
+
+def check_domain(sender):
+
+     trusted_domains = []
+     trusted_database = []
+     suspicious_domains = []
+
+     with open(TRUSTED_DOMAINS, "r") as file:
+
+          for line in file:
+
+               trusted_database.append(line.strip().lower())
+
+          for line in sender:
+
+               if "@" not in line:
+                    continue
+
+          domain = line.split("@")[1]
+
+          if domain in trusted_database:
+               if domain not in trusted_domains:
+                    trusted_domains.append(domain)
+
+          else:
+               if domain not in suspicious_domains:
+                    suspicious_domains.append(domain)
+
+
+     if trusted_domains:
+          print("\nTrusted domain(s) found:",len(trusted_domains))
+
+          for domain in trusted_domains:
+               print("-",domain)
+
+     if suspicious_domains:
+          print("\nSuspicious domain(s) found:",len(suspicious_domains))
+
+          for domain in suspicious_domains:
+               print("-",domain)
+
+
+def analyze_email(content):
+
+     check_keywords(content)
+     check_urls(content)
+
+     sender = check_sender(content)
+
+     check_domain(sender)
 
 
 display_banner()

@@ -1,0 +1,37 @@
+Phase 1 - Detection
+-------------------
+☐ Keyword Detector
+☐ URL Detector
+☐ Email Detector
+☐ Attachment Detector
+
+Phase 2 - Analysis
+------------------
+☐ Keyword Analyzer
+☐ URL Analyzer
+☐ Sender Analyzer
+☐ Grammar Analyzer
+
+Phase 3 - Report
+----------------
+☐ Risk Calculator
+☐ Terminal Report
+☐ Save TXT
+☐ Save PDF
+☐ Categorize Email
+
+
+
+analyze_email(content)
+│
+├── check_keywords(content)
+├── check_urls(content)
+├── check_sender(content)
+├── check_attachments(content)
+├── check_grammar(content)
+├── check_urgency(content)
+├── check_spoofing(content)
+├── calculate_risk_score(...)
+├── classify_email(...)
+├── save_report(...)
+└── move_email(...)
