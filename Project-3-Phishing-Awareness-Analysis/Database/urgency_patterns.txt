@@ -1,43 +1,52 @@
-# DEADLINES
-within 24 hours
-within 12 hours
-within 48 hours
-today only
-expires today
-deadline
-before midnight
-immediately
-urgent
-urgently
-right now
-act now
-respond now
-time is running out
-limited time
-offer expires
+# ==================================================
+# HIGH RISK
+# ==================================================
 
-# ACCOUNT THREATS
-account suspended
-account locked
-account disabled
-account restricted
-security alert
-unauthorized login
-verify immediately
-confirm immediately
-failure to respond
-your account will be closed
-your account will be terminated
+act now:HIGH
+immediate action required:HIGH
+respond immediately:HIGH
+verify immediately:HIGH
+confirm immediately:HIGH
+within 24 hours:HIGH
+within 12 hours:HIGH
+account will be suspended:HIGH
+account will be terminated:HIGH
+failure to respond:HIGH
+your account will be closed:HIGH
+urgent action required:HIGH
+expires today:HIGH
+today only:HIGH
+last chance:HIGH
 
-# PAYMENT THREATS
-payment failed
-payment overdue
-invoice overdue
-pay immediately
+# ==================================================
+# MEDIUM RISK
+# ==================================================
 
-# REWARD PRESSURE
-claim now
-claim immediately
-claim your prize
-claim your reward
-limited offer
+urgent:MEDIUM
+urgently:MEDIUM
+immediately:MEDIUM
+deadline:MEDIUM
+limited time:MEDIUM
+limited offer:MEDIUM
+offer expires:MEDIUM
+right now:MEDIUM
+respond now:MEDIUM
+time is running out:MEDIUM
+verify now:MEDIUM
+confirm now:MEDIUM
+update now:MEDIUM
+payment overdue:MEDIUM
+invoice overdue:MEDIUM
+
+# ==================================================
+# LOW RISK
+# ==================================================
+
+as soon as possible:LOW
+promptly:LOW
+please respond:LOW
+kindly respond:LOW
+quick response:LOW
+important notice:LOW
+important information:LOW
+time sensitive:LOW

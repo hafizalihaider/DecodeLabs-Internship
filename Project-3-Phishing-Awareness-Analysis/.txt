@@ -1,25 +1,8 @@
-Phase 1 - Detection
--------------------
-☐ Keyword Detector
-☐ URL Detector
-☐ Email Detector
-☐ Attachment Detector
-
-Phase 2 - Analysis
-------------------
-☐ Keyword Analyzer
-☐ URL Analyzer
-☐ Sender Analyzer
-☐ Grammar Analyzer
-
-Phase 3 - Report
-----------------
 ☐ Risk Calculator
 ☐ Terminal Report
 ☐ Save TXT
 ☐ Save PDF
 ☐ Categorize Email
-
 
 
 analyze_email(content)
@@ -37,11 +20,29 @@ analyze_email(content)
 └── move_email(...)
 
 
-Detector	Risk Points
-Suspicious keywords	+15
-Suspicious URLs	+30
-Suspicious sender/domain	+40
-Attachment	+15
-Poor grammar	+10
-Urgency	+15
-Spoofing	+50
+| Category              | High | Medium | Low |
+| --------------------- | ---: | -----: | --: |
+| **Keywords**          |  +10 |     +5 |  +2 |
+| **URLs**              |  +30 |    +15 |  +5 |
+| **Domains**           |  +30 |    +15 |  +5 |
+| **Attachments**       |  +35 |    +20 | +10 |
+| **Grammar / Writing** |   +8 |     +4 |  +1 |
+| **Urgency**           |  +10 |     +5 |  +2 |
+| **Spoofing**          |  +40 |    +20 | +10 |
+
+
+
+Score	Classification
+0–24	🟢 Legitimate
+25–49	🟡 Low Risk
+50–79	🟠 Medium Risk
+80–119	🔴 High Risk
+120+	🚨 Critical Phishing
+
+
+| Trusted Indicator         | Score Adjustment |
+| ------------------------- | ---------------: |
+| Trusted sender domain     |              −20 |
+| Trusted URL               |              −15 |
+| Professional writing      |               −5 |
+| No suspicious attachments |                0 |

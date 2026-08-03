@@ -1,16 +1,43 @@
-attachment
-attached
-attach
-invoice.pdf
-document.pdf
-payment.pdf
-resume.pdf
-report.pdf
-.zip
-.rar
-.exe
-.doc
-.docx
-.xls
-.xlsx
-.pdf
+# ==================================================
+# HIGH RISK
+# ==================================================
+
+.exe:HIGH
+.scr:HIGH
+.com:HIGH
+.bat:HIGH
+.cmd:HIGH
+.pif:HIGH
+.cpl:HIGH
+.msi:HIGH
+.js:HIGH
+.jse:HIGH
+.vbs:HIGH
+.vbe:HIGH
+.wsf:HIGH
+.wsh:HIGH
+.ps1:HIGH
+.reg:HIGH
+.hta:HIGH
+.lnk:HIGH
+.jar:HIGH
+
+# ==================================================
+# MEDIUM RISK
+# ==================================================
+
+.docm:MEDIUM
+.xlsm:MEDIUM
+.pptm:MEDIUM
+.zip:MEDIUM
+.rar:MEDIUM
+.7z:MEDIUM
+.iso:MEDIUM
+.img:MEDIUM
+.cab:MEDIUM
+
+# ==================================================
+# LOW RISK
+# ==================================================
+
+.pdf:LOW

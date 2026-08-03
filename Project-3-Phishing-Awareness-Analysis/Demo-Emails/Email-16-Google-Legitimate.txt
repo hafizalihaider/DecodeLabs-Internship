@@ -1,0 +1,40 @@
+From: no-reply@accounts.google.com
+To: user@email.com
+Subject: Security Alert: New Sign-in to Your Google Account
+
+Hello Muhammad Ali Haider,
+
+We detected a new sign-in to your Google Account.
+
+Sign-in Details
+
+Location:
+Lahore, Punjab, Pakistan
+
+Device:
+Windows 11
+Google Chrome
+
+Time:
+August 16, 2026
+9:18 PM (PKT)
+
+If this was you, no further action is required.
+
+If you do not recognize this activity, please review your recent security activity immediately.
+
+Google Account Security:
+https://myaccount.google.com/security
+
+You can also review your recent devices here:
+https://myaccount.google.com/device-activity
+
+For your safety, Google will never ask you to reply to an email with your password, verification code, or recovery codes.
+
+Thank you for helping keep your Google Account secure.
+
+Regards,
+
+Google Account Security Team
+
+https://support.google.com/accounts

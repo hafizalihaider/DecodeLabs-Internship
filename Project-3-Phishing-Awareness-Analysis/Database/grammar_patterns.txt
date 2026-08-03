@@ -1,55 +1,69 @@
-# ==========================
-# SPELLING MISTAKES
-# ==========================
+# ==================================================
+# HIGH RISK
+# ==================================================
 
-recieve
-acount
-accunt
-verfication
-immediatly
-succesfully
-congratulation
-updation
-loging
-paymant
-securty
-authentification
-banking detail
+your account has been suspend:HIGH
+your account has been lock:HIGH
+your account has been disable:HIGH
+your account is temporary suspend:HIGH
+your payment has been decline:HIGH
+your package has been hold:HIGH
+failure to respond:HIGH
+click here immediately:HIGH
+kindly update your informations:HIGH
+confirm your informations:HIGH
+verify your informations:HIGH
+your account will be closed:HIGH
+your account will be terminated:HIGH
+your account has been compromised:HIGH
+your identity has been stolen:HIGH
+confirm your account now:HIGH
+verify your account now:HIGH
 
-# ==========================
-# GRAMMAR MISTAKES
-# ==========================
+# ==================================================
+# MEDIUM RISK
+# ==================================================
 
-your account has been suspend
-your account has been lock
-your payment has been decline
-your package has been hold
-your account is temporary suspend
-please kindly
-kindly do
-kindly update your informations
-confirm your informations
-click here immediately
-failure to respond
-act now immediately
+please kindly:MEDIUM
+kindly do:MEDIUM
+kindly verify:MEDIUM
+kindly update:MEDIUM
+recieve:MEDIUM
+acount:MEDIUM
+accunt:MEDIUM
+verfication:MEDIUM
+immediatly:MEDIUM
+succesfully:MEDIUM
+congratulation:MEDIUM
+updation:MEDIUM
+loging:MEDIUM
+paymant:MEDIUM
+securty:MEDIUM
+authentification:MEDIUM
+banking detail:MEDIUM
+click below:MEDIUM
+reply urgently:MEDIUM
+your package waiting:MEDIUM
+your payment failed:MEDIUM
+you must verify:MEDIUM
+respond within:MEDIUM
 
-# ==========================
-# SUSPICIOUS PHRASES
-# ==========================
+# ==================================================
+# LOW RISK
+# ==================================================
 
-dear valued customer
-dear user
-dear client
-dear winner
-congratulation
-claim your reward
-verify immediately
-respond immediately
-
-# ==========================
-# EXCESSIVE PUNCTUATION
-# ==========================
-
-!!!
-???
-......
+dear valued customer:LOW
+dear customer:LOW
+dear client:LOW
+dear user:LOW
+dear winner:LOW
+important notice:LOW
+important message:LOW
+security notification:LOW
+claim your reward:LOW
+claim your gift:LOW
+verify immediately:LOW
+respond immediately:LOW
+please confirm:LOW
+please verify:LOW
+thank you for your cooperation:LOW
