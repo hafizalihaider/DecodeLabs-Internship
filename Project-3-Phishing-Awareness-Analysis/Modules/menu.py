@@ -68,13 +68,16 @@ def email_analyzer_menu():
                sub_choice = int(sub_choice)
                if sub_choice == 1:
                     get_demo_emails()
+                    break
 
 
                elif sub_choice == 2:
                     analyze_multiple_emails()
+                    break
 
                elif sub_choice == 3:
                     analyze_all_emails()
+                    break
 
                elif sub_choice == 0:
                     break
