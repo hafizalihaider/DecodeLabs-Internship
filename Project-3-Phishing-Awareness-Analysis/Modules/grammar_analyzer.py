@@ -7,14 +7,7 @@ def check_grammar(content):
      medium_risk_grammar = []
      low_risk_grammar = []
 
-     with open(GRAMMAR_PATTERNS , "r") as file:
-
-          patterns = []
-        
-          for line in file:
-
-               line = line.strip()
-            
+     with open(GR
                if not line or line.startswith("#"):
                     continue
 

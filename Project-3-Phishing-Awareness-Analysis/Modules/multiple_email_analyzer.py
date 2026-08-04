@@ -1,17 +1,3 @@
-import os
-from Modules.email_loader import load_demo_email
-from Modules.email_analyzer import analyze_email
-
-def analyze_multiple_emails():
-
-    while True:
-
-        email_list = []
-        analyzed = []
-
-        print("="*70)
-        print(f"\n{'Multiple Emails Analyzer':^70}\n")
-        print("="*70)
 
         print("\nEnter the email number(s) you want to analyze.")
         print("Example: 1,4,7")

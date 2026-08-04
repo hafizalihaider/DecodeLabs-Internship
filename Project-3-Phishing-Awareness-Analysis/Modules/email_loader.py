@@ -1,50 +1,45 @@
 import os
 from Modules.email_analyzer import analyze_email
 
-def get_demo_emails():
+def get_demo_emails(
 
-     while True:
+     while True
 
-          print("="*70)
+          print("="*70
           print(f"{'Demo Email Analyzer':^70}")
           print("="*70)
 
-          print()
-          print("Select only one option:\n")
+          email_list =
 
-          email_list = []
+          folder = os.listdir("Demo-Emails"
 
-          folder = os.listdir("Demo-Emails")
+          for file in folder
+               if file.endswith(".txt")
+                    email_list.append(file
 
-          for file in folder:
-               if file.endswith(".txt"):
-                    email_list.append(file)
+          email_list.sort(key = lambda file: int(file.split("-")[1])
 
-          email_list.sort(key = lambda file: int(file.split("-")[1]))
-          print(f"{len(email_list)} email(s) found!\n")
+          print(f"{len(email_list)} email(s) found!\n"
 
-          for number,files in enumerate(email_list, 1):
+          for number,files in enumerate(email_list, 1)
                print(f"[{number:02}] {files}")
-               
-          print("\n[00] Back")
-          print("-"*70)
 
-          demo_email_choice = input("\nEnter your choice: ")
+          demo_email_choice = input("Enter your choice: "
 
-          if demo_email_choice == "00":
+          if demo_email_choice == "00"
                break
 
-          if demo_email_choice.isdigit():
+          if demo_email_choice.isdigit(
 
-               demo_email_choice = int(demo_email_choice)
+               demo_email_choice = int(demo_email_choice
 
-               if demo_email_choice >= 1 and demo_email_choice <= len(email_list):
-                    read_demo_email(email_list[demo_email_choice - 1])
+               if demo_email_choice >= 1 and demo_email_choice <= len(email_list)
+                    read_demo_email(email_list[demo_email_choice - 1]
 
-               else:
+               else
                     print(f"[!] Email {demo_email_choice} does not exist.")
 
-          else:
+          else
                print(f"[!] '{demo_email_choice}' is not a valid number.")
 
 

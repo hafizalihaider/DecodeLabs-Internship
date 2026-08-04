@@ -1,11 +1,7 @@
-from Modules.config import KEYWORDS_FILE
+.config import KEYWORDS_FILE
 
 def check_keywords(content):
 
-     content = content.lower()
-     high_risk_keywords = []
-     medium_risk_keywords = []
-     low_risk_keywords = []
 
      with open(KEYWORDS_FILE , "r") as file:
 

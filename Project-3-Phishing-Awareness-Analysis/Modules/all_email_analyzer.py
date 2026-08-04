@@ -1,20 +1,4 @@
-from Modules.email_analyzer import analyze_email
-import os
 
-def analyze_all_emails():
-
-    print("=" * 70)
-    print(f"\n{'Analyzing All Emails':^70}\n")
-    print("=" * 70)
-
-    email_list = []
-
-    folder = os.listdir("Demo-Emails")
-
-
-    for file in folder:
-        if file.endswith(".txt"):
-            email_list.append(file)
 
     email_list.sort(key = lambda file: int(file.split("-")[1]))
     print(f"{len(email_list)} email(s) found!\n")

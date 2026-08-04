@@ -1,29 +1,4 @@
 
-from matplotlib.pylab import rint
-
-
-def calculate_risk_score(
-    high_risk_keywords,
-    medium_risk_keywords,
-    low_risk_keywords,
-    trusted_urls,
-    suspicious_urls,
-    trusted_domains,
-    unknown_domains,
-    malicious_domains,
-    high_risk_attachments,
-    medium_risk_attachments,
-    low_risk_attachments,
-    high_risk_grammar,
-    medium_risk_grammar,
-    low_risk_grammar,
-    high_risk_urgency,
-    medium_risk_urgency,
-    low_risk_urgency,
-    high_risk_spoofing,
-    medium_risk_spoofing,
-    low_risk_spoofing
-):
      
      score = 0
 

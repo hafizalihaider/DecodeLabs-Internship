@@ -1,17 +1,4 @@
-from Modules.email_loader import get_demo_emails
-from Modules.multiple_email_analyzer import analyze_multiple_emails
-from Modules.all_email_analyzer import analyze_all_emails
-from Modules.custom_email import analyze_custom_email
 
-def display_banner():
-     print("=" * 70)
-     print()
-     print(f"{'PHISHING AWARENESS ANALYZER':^70}\n")
-     print("=" * 70)
-
-def main_menu():
-
-     while True:
 
           print(f"{'Main Menu':^70}")
           print("=" * 70)

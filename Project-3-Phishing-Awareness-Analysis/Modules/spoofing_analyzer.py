@@ -1,12 +1,4 @@
-from Modules.config import SPOOFING_PATTERNS
 
-def check_spoofing(content):
-
-     content = content.lower()
-
-     high_risk_spoofing = []
-     medium_risk_spoofing = []
-     low_risk_spoofing = []
 
      with open(SPOOFING_PATTERNS, "r") as file:
 

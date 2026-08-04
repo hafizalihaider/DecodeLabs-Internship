@@ -1,15 +1,4 @@
-from Modules.config import TRUSTED_DOMAINS
-from Modules.config import MALICIOUS_DOMAINS
 
-def check_sender(content):
-
-     content = content.lower()
-
-     matched_senders = []
-
-     for line in content.splitlines():
-
-          if line.startswith("from:"):
 
                sender = line.replace("from:","").strip()
 

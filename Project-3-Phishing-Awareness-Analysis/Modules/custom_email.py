@@ -1,7 +1,3 @@
-from Modules.email_analyzer import analyze_email
-import os
-
-def analyze_custom_email():
 
     email_lines = []
     folder = "Custom-Emails"

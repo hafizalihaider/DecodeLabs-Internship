@@ -1,8 +1,4 @@
-from Modules.config import URGENCY_PATTERNS
-
-def check_urgency(content):
-
-     content = content.lower()
+from Modules.con
 
      high_risk_urgency = []
      medium_risk_urgency = []
@@ -18,12 +14,6 @@ def check_urgency(content):
 
                if not line or line.startswith("#"):
                     continue
-
-               pattern, risk = line.split(":")
-
-               pattern = pattern.strip().lower()
-               risk = risk.strip().upper()
-
                patterns.append((pattern, risk))
 
           patterns.sort(
@@ -39,11 +29,4 @@ def check_urgency(content):
                          high_risk_urgency.append(pattern)
 
                elif risk == "MEDIUM":
-                    if pattern not in medium_risk_urgency:
-                         medium_risk_urgency.append(pattern)
-
-               elif risk == "LOW":
-                    if pattern not in low_risk_urgency:
-                         low_risk_urgency.append(pattern)
-
-     return high_risk_urgency, medium_risk_urgency, low_risk_urgency
+                    if pattern not in med

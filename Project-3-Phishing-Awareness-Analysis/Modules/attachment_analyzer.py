@@ -1,20 +1,4 @@
-from Modules.config import ATTACHMENT_KEYWORDS
 
-def analyze_attachment(content):
-
-     high_risk_attachments = []
-     medium_risk_attachments = []
-     low_risk_attachments = []
-
-     content = content.lower()
-
-     words = content.split()
-
-     with open(ATTACHMENT_KEYWORDS, "r") as file:
-
-          patterns = []
-
-          for line in file:
 
                line = line.strip()
 
