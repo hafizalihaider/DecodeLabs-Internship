@@ -1,0 +1,52 @@
+# ==================================================
+# HIGH RISK
+# ==================================================
+
+spoofed sender:HIGH
+display name mismatch:HIGH
+fake support:HIGH
+fake security team:HIGH
+impersonation:HIGH
+official notification:HIGH
+verified sender:HIGH
+trusted sender:HIGH
+customer support team:HIGH
+account department:HIGH
+billing department:HIGH
+
+# ==================================================
+# MEDIUM RISK
+# ==================================================
+
+security team:MEDIUM
+support team:MEDIUM
+technical support:MEDIUM
+customer support:MEDIUM
+help desk:MEDIUM
+admin team:MEDIUM
+noreply:MEDIUM
+no-reply:MEDIUM
+service desk:MEDIUM
+mail administrator:MEDIUM
+
+# ==================================================
+# LOW RISK
+# ==================================================
+
+github:LOW
+google:LOW
+microsoft:LOW
+apple:LOW
+paypal:LOW
+amazon:LOW
+facebook:LOW
+instagram:LOW
+linkedin:LOW
+dropbox:LOW
+onedrive:LOW
+outlook:LOW
+office365:LOW
+dhl:LOW
+fedex:LOW
+ups:LOW
+bank:LOW

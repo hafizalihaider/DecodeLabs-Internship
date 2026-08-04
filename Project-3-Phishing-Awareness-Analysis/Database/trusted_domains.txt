@@ -1,30 +1,105 @@
-paypal.com
+# ==================================================
+# SEARCH ENGINES
+# ==================================================
+
 google.com
+bing.com
+yahoo.com
+duckduckgo.com
+
+# ==================================================
+# EMAIL SERVICES
+# ==================================================
+
 gmail.com
-youtube.com
-microsoft.com
-office.com
 outlook.com
-apple.com
+hotmail.com
+live.com
+yahoo.com
 icloud.com
-amazon.com
-amazon.co.uk
+proton.me
+protonmail.com
+zoho.com
+
+# ==================================================
+# CLOUD SERVICES
+# ==================================================
+
 github.com
 gitlab.com
-linkedin.com
+bitbucket.org
+dropbox.com
+onedrive.com
+drive.google.com
+
+# ==================================================
+# MICROSOFT
+# ==================================================
+
+microsoft.com
+office.com
+office365.com
+windows.com
+
+# ==================================================
+# GOOGLE
+# ==================================================
+
+google.com
+youtube.com
+docs.google.com
+
+# ==================================================
+# APPLE
+# ==================================================
+
+apple.com
+
+# ==================================================
+# META
+# ==================================================
+
 facebook.com
 instagram.com
-whatsapp.com
-dropbox.com
+messenger.com
+threads.net
+
+# ==================================================
+# AMAZON
+# ==================================================
+
+amazon.com
+
+# ==================================================
+# PAYMENT
+# ==================================================
+
+paypal.com
+payoneer.com
+stripe.com
+
+# ==================================================
+# SHIPPING
+# ==================================================
+
 dhl.com
 fedex.com
 ups.com
-coursera.org
-edx.org
-udemy.com
-kaggle.com
+
+# ==================================================
+# SOCIAL
+# ==================================================
+
+linkedin.com
+x.com
+twitter.com
+reddit.com
+discord.com
+
+# ==================================================
+# PROGRAMMING
+# ==================================================
+
 python.org
-mozilla.org
-wikipedia.org
-stackoverflow.com
 openai.com
+stackoverflow.com

@@ -1,125 +1,138 @@
-urgent
-immediately
-action required
-verify
-verification
-confirm
-confirmation
-account
-suspended
-suspension
-disabled
-locked
-security alert
-unusual activity
-login
-password
-username
-credential
-update
-reset
-recover
-claim
-winner
-winning
-prize
-reward
-gift
-free
-giveaway
-bonus
-offer
-limited time
-expire
-expiration
-deadline
-last chance
-congratulations
-selected
-selected winner
-lottery
-jackpot
-cash
-refund
-payment
-invoice
-transaction
-fee
-processing fee
-verification fee
-send money
-transfer
-wallet
-cryptocurrency
-crypto
-bitcoin
-btc
-ethereum
-eth
-investment
-profit
-guaranteed
-double your money
-earn money
-click here
-open link
-download
-attachment
-document
-scan
-invoice
-bank
-paypal
-amazon
-microsoft
-google
-apple
-dhl
-delivery
-tracking
-tax refund
-government
-legal notice
-court
-fine
-penalty
-login
-signin
-sign-in
-verify
-verification
-confirm
-confirmation
-account
-secure
-security
-update
-validate
-auth
-authentication
-password
-reset
-recover
-unlock
-support
-claim
-reward
-gift
-giveaway
-prize
-winner
-bonus
-payment
-billing
-invoice
-transaction
-wallet
-crypto
-bitcoin
-ethereum
-free
-offer
-promo
-download
-attachment
-document
+# ==================================================
+# HIGH RISK
+# ==================================================
+
+verification fee:HIGH
+processing fee:HIGH
+wire transfer:HIGH
+bank transfer:HIGH
+send money:HIGH
+gift card:HIGH
+gift cards:HIGH
+claim your prize:HIGH
+claim your reward:HIGH
+lottery winner:HIGH
+jackpot winner:HIGH
+selected winner:HIGH
+crypto giveaway:HIGH
+cryptocurrency:HIGH
+bitcoin:HIGH
+ethereum:HIGH
+btc:HIGH
+eth:HIGH
+wallet address:HIGH
+private key:HIGH
+seed phrase:HIGH
+recovery phrase:HIGH
+double your money:HIGH
+guaranteed profit:HIGH
+investment opportunity:HIGH
+earn money fast:HIGH
+social security number:HIGH
+credit card:HIGH
+debit card:HIGH
+cvv:HIGH
+security code:HIGH
+verification code:HIGH
+one time password:HIGH
+otp:HIGH
+2fa code:HIGH
+activation code:HIGH
+verify your identity:HIGH
+verify account now:HIGH
+confirm account immediately:HIGH
+remote access:HIGH
+teamviewer:HIGH
+anydesk:HIGH
+quick assist:HIGH
+
+# ==================================================
+# MEDIUM RISK
+# ==================================================
+
+urgent:MEDIUM
+urgently:MEDIUM
+immediately:MEDIUM
+action required:MEDIUM
+act now:MEDIUM
+respond immediately:MEDIUM
+deadline:MEDIUM
+last chance:MEDIUM
+limited time:MEDIUM
+expires today:MEDIUM
+within 24 hours:MEDIUM
+verify:MEDIUM
+verification:MEDIUM
+confirm:MEDIUM
+confirmation:MEDIUM
+verify identity:MEDIUM
+confirm identity:MEDIUM
+reset password:MEDIUM
+recover account:MEDIUM
+unlock account:MEDIUM
+update payment:MEDIUM
+update information:MEDIUM
+security alert:MEDIUM
+unusual activity:MEDIUM
+login now:MEDIUM
+new login:MEDIUM
+login attempt:MEDIUM
+session expired:MEDIUM
+click here:MEDIUM
+open link:MEDIUM
+download attachment:MEDIUM
+invoice attached:MEDIUM
+tracking number:MEDIUM
+delivery failed:MEDIUM
+tax refund:MEDIUM
+legal notice:MEDIUM
+court notice:MEDIUM
+fine:MEDIUM
+penalty:MEDIUM
+reward:MEDIUM
+bonus:MEDIUM
+offer:MEDIUM
+promo:MEDIUM
+free gift:MEDIUM
+bank:MEDIUM
+payment:MEDIUM
+billing:MEDIUM
+invoice:MEDIUM
+transaction:MEDIUM
+wallet:MEDIUM
+document:MEDIUM
+attachment:MEDIUM
+download:MEDIUM
+
+# ==================================================
+# LOW RISK
+# ==================================================
+
+account:LOW
+security:LOW
+password:LOW
+authentication:LOW
+auth:LOW
+login:LOW
+signin:LOW
+sign-in:LOW
+username:LOW
+credential:LOW
+recover:LOW
+reset:LOW
+update:LOW
+secure:LOW
+support:LOW
+email:LOW
+user:LOW
+profile:LOW
+device:LOW
+browser:LOW
+location:LOW
+notification:LOW
+activity:LOW
+message:LOW
+request:LOW
+tracking:LOW
+delivery:LOW
+time:LOW

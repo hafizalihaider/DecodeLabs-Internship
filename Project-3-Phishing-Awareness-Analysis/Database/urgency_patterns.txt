@@ -1,0 +1,52 @@
+# ==================================================
+# HIGH RISK
+# ==================================================
+
+act now:HIGH
+immediate action required:HIGH
+respond immediately:HIGH
+verify immediately:HIGH
+confirm immediately:HIGH
+within 24 hours:HIGH
+within 12 hours:HIGH
+account will be suspended:HIGH
+account will be terminated:HIGH
+failure to respond:HIGH
+your account will be closed:HIGH
+urgent action required:HIGH
+expires today:HIGH
+today only:HIGH
+last chance:HIGH
+
+# ==================================================
+# MEDIUM RISK
+# ==================================================
+
+urgent:MEDIUM
+urgently:MEDIUM
+immediately:MEDIUM
+deadline:MEDIUM
+limited time:MEDIUM
+limited offer:MEDIUM
+offer expires:MEDIUM
+right now:MEDIUM
+respond now:MEDIUM
+time is running out:MEDIUM
+verify now:MEDIUM
+confirm now:MEDIUM
+update now:MEDIUM
+payment overdue:MEDIUM
+invoice overdue:MEDIUM
+
+# ==================================================
+# LOW RISK
+# ==================================================
+
+as soon as possible:LOW
+promptly:LOW
+please respond:LOW
+kindly respond:LOW
+quick response:LOW
+important notice:LOW
+important information:LOW
+time sensitive:LOW
