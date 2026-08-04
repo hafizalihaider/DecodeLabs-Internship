@@ -42,4 +42,6 @@ def analyze_custom_email():
 
         file.write(content)
 
+    print(f"\n[✓] Email saved as '{folder_name}'.")
+
     analyze_email(content)
