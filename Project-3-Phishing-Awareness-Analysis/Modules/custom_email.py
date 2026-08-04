@@ -5,10 +5,10 @@ def analyze_custom_email():
 
     email_lines = []
     folder = "Custom-Emails"
-    folder_files = os.listdir(folder)
     txt_files = 0
 
     os.makedirs(folder, exist_ok= True)
+    folder_files = os.listdir(folder)
 
     print("="*70)
     print(f"\n{'Custom Email Analyzer':^70}\n")
@@ -26,6 +26,10 @@ def analyze_custom_email():
         email_lines.append(line)
 
     content = "\n".join(email_lines)
+
+    if not email_lines:
+        print("[!] No email entered.")
+        return
 
     for file in folder_files:
         if file.endswith(".txt"):
