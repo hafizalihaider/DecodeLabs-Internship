@@ -1,7 +1,7 @@
 from Modules.email_loader import get_demo_emails
 from Modules.multiple_email_analyzer import analyze_multiple_emails
 from Modules.all_email_analyzer import analyze_all_emails
-
+from Modules.custom_email import analyze_custom_email
 
 def display_banner():
      print("=" * 70)
@@ -31,7 +31,7 @@ def main_menu():
                     email_analyzer_menu()
 
                elif main_choice == 2:
-                    analyze_multiple_emails()
+                    analyze_custom_email()
 
                elif main_choice == 3:
                     view_reports()
