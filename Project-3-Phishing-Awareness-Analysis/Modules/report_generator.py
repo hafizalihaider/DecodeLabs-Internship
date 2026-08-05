@@ -42,7 +42,7 @@ def generate_report(
     os.makedirs(report_folder, exist_ok = True)
     folder = os.listdir(report_folder)
 
-    file_name = f"Report-{len(folder) + 1}.txt"
+    file_name = f"{current_time.strftime("Phishing_Analysis_Report_%y_%m_%d")}_{len(folder) + 1 :03}"
     file_path = os.path.join(report_folder, file_name)
 
     with open(file_path, "w") as file:
@@ -53,7 +53,7 @@ def generate_report(
         file.write("\n")
 
         file.write(f"{'Date: ' + date:<50}{'Time: ' + time:>50}\n")
-        file.write("-"*100 + "\n")
+        file.write("="*100 + "\n")
         file.write("\n")
 
         file.write(f"\nHigh Risk Keywords: {len(high_risk_keywords)}\n")
@@ -177,6 +177,8 @@ def generate_report(
         file.write("\n")
 
         file.write("=" * 100 + "\n")
-        file.write(f"{f'Risk Score: {score}/100':^100}\n")
-        file.write(f"{f'Risk Level: {level}':^100}\n")
+        file.write("FINAL VERDICT\n")
+        file.write("-" * 100 + "\n")
+        file.write(f"Risk Score: {score}/100\n")
+        file.write(f"Risk Level: {level}\n")
         file.write("=" * 100 + "\n")
