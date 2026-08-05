@@ -1,48 +1,108 @@
-☐ Risk Calculator
-☐ Terminal Report
-☐ Save TXT
-☐ Save PDF
-☐ Categorize Email
+======================================================================
+                    PHISHING AWARENESS ANALYSIS REPORT
+======================================================================
 
+Report ID      : Report-001
+Date           : 05-Aug-2026
+Time           : 10:35 PM
+Email Type     : Demo Email
+Email Name     : Email-3-Bank-Phishing.txt
 
-analyze_email(content)
-│
-├── check_keywords(content)
-├── check_urls(content)
-├── check_sender(content)
-├── check_attachments(content)
-├── check_grammar(content)
-├── check_urgency(content)
-├── check_spoofing(content)
-├── calculate_risk_score(...)
-├── classify_email(...)
-├── save_report(...)
-└── move_email(...)
+======================================================================
+EMAIL SUMMARY
+======================================================================
 
+Risk Score     : 100 / 100
+Risk Level     : 🚨 CRITICAL PHISHING
 
-| Category              | High | Medium | Low |
-| --------------------- | ---: | -----: | --: |
-| **Keywords**          |  +10 |     +5 |  +2 |
-| **URLs**              |  +30 |    +15 |  +5 |
-| **Domains**           |  +30 |    +15 |  +5 |
-| **Attachments**       |  +35 |    +20 | +10 |
-| **Grammar / Writing** |   +8 |     +4 |  +1 |
-| **Urgency**           |  +10 |     +5 |  +2 |
-| **Spoofing**          |  +40 |    +20 | +10 |
+======================================================================
+DETECTION RESULTS
+======================================================================
 
+High Risk Keywords (1)
+----------------------
+• otp
 
+Medium Risk Keywords (6)
+------------------------
+• verification
+• tax refund
+• deadline
+• bank
+...
 
-Score	Classification
-0–24	🟢 Legitimate
-25–49	🟡 Low Risk
-50–79	🟠 Medium Risk
-80–119	🔴 High Risk
-120+	🚨 Critical Phishing
+Low Risk Keywords (5)
+---------------------
+• account
+• secure
+...
 
+======================================================================
+URL ANALYSIS
+======================================================================
 
-| Trusted Indicator         | Score Adjustment |
-| ------------------------- | ---------------: |
-| Trusted sender domain     |              −20 |
-| Trusted URL               |              −15 |
-| Professional writing      |               −5 |
-| No suspicious attachments |                0 |
+Trusted URLs (0)
+
+Suspicious URLs (1)
+-------------------
+• http://national-bank-secure.com/login
+
+======================================================================
+DOMAIN ANALYSIS
+======================================================================
+
+Trusted Domains (0)
+
+Unknown Domains (1)
+-------------------
+• national-bank-secure.com
+
+Malicious Domains (0)
+
+======================================================================
+ATTACHMENT ANALYSIS
+======================================================================
+
+High Risk : None
+Medium Risk : None
+Low Risk : None
+
+======================================================================
+GRAMMAR ANALYSIS
+======================================================================
+
+High Risk
+• ...
+
+Medium Risk
+• ...
+
+Low Risk
+• ...
+
+======================================================================
+URGENCY ANALYSIS
+======================================================================
+
+...
+
+======================================================================
+SPOOFING ANALYSIS
+======================================================================
+
+...
+
+======================================================================
+FINAL VERDICT
+======================================================================
+
+This email contains multiple phishing indicators,
+including suspicious URLs, urgency language,
+and spoofing characteristics.
+
+Recommendation:
+Do NOT click any links.
+Do NOT provide personal information.
+Report the email to your security administrator.
+
+======================================================================

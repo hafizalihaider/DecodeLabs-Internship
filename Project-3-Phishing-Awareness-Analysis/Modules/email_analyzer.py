@@ -107,35 +107,62 @@ def analyze_email(content):
           print("-", pattern)
 
      score, level = calculate_risk_score(
-     high_risk_keywords=high_risk_keywords,
-     medium_risk_keywords=medium_risk_keywords,
-     low_risk_keywords=low_risk_keywords,
+          high_risk_keywords=high_risk_keywords,
+          medium_risk_keywords=medium_risk_keywords,
+          low_risk_keywords=low_risk_keywords,
 
-     trusted_urls=trusted_urls,
-     suspicious_urls=suspicious_urls,
+          trusted_urls=trusted_urls,
+          suspicious_urls=suspicious_urls,
 
-     trusted_domains=trusted_domains,
-     unknown_domains=unknown_domains,
-     malicious_domains=malicious_domains,
+          trusted_domains=trusted_domains,
+          unknown_domains=unknown_domains,
+          malicious_domains=malicious_domains,
 
-     high_risk_attachments=high_risk_attachments,
-     medium_risk_attachments=medium_risk_attachments,
-     low_risk_attachments=low_risk_attachments,
+          high_risk_attachments=high_risk_attachments,
+          medium_risk_attachments=medium_risk_attachments,
+          low_risk_attachments=low_risk_attachments,
 
-     high_risk_grammar=high_risk_grammar,
-     medium_risk_grammar=medium_risk_grammar,
-     low_risk_grammar=low_risk_grammar,
+          high_risk_grammar=high_risk_grammar,
+          medium_risk_grammar=medium_risk_grammar,
+          low_risk_grammar=low_risk_grammar,
 
-     high_risk_urgency=high_risk_urgency,
-     medium_risk_urgency=medium_risk_urgency,
-     low_risk_urgency=low_risk_urgency,
+          high_risk_urgency=high_risk_urgency,
+          medium_risk_urgency=medium_risk_urgency,
+          low_risk_urgency=low_risk_urgency,
 
-     high_risk_spoofing=high_risk_spoofing,
-     medium_risk_spoofing=medium_risk_spoofing,
-     low_risk_spoofing=low_risk_spoofing
+          high_risk_spoofing=high_risk_spoofing,
+          medium_risk_spoofing=medium_risk_spoofing,
+          low_risk_spoofing=low_risk_spoofing
      )
      
-     print("\n" + "=" * 70)
-     print(f"{f'Risk Score: {score}/100':^70}")
-     print(f"{f'Risk Level : {level}':^70}")
-     print("=" * 70)
+     return {        
+          "high_risk_keywords": high_risk_keywords,
+          "medium_risk_keywords": medium_risk_keywords,
+          "low_risk_keywords": low_risk_keywords,
+
+          "trusted_urls": trusted_urls,
+          "suspicious_urls": suspicious_urls,
+
+          "trusted_domains": trusted_domains,
+          "unknown_domains": unknown_domains,
+          "malicious_domains": malicious_domains,
+
+          "high_risk_attachments": high_risk_attachments,
+          "medium_risk_attachments": medium_risk_attachments,
+          "low_risk_attachments": low_risk_attachments,
+
+          "high_risk_grammar": high_risk_grammar,
+          "medium_risk_grammar": medium_risk_grammar,
+          "low_risk_grammar": low_risk_grammar,
+
+          "high_risk_urgency": high_risk_urgency,
+          "medium_risk_urgency": medium_risk_urgency,
+          "low_risk_urgency": low_risk_urgency,
+
+          "high_risk_spoofing": high_risk_spoofing,
+          "medium_risk_spoofing": medium_risk_spoofing,
+          "low_risk_spoofing": low_risk_spoofing,
+
+          "score": score,
+          "level": level
+     }
