@@ -23,9 +23,9 @@ def analyze_email(content):
      high_risk_urgency, medium_risk_urgency, low_risk_urgency = check_urgency(content)
      high_risk_spoofing, medium_risk_spoofing, low_risk_spoofing = check_spoofing(content)
 
-     print("="*70)
-     print(f"{'Remarks':^70}")
-     print("="*70)
+     print("="*100)
+     print(f"{'Remarks':^100}")
+     print("="*100)
      print("\nHigh Risk Keywords:", len(high_risk_keywords))
      for keyword in high_risk_keywords:
           print("-", keyword)

@@ -4,23 +4,23 @@ from Modules.all_email_analyzer import analyze_all_emails
 from Modules.custom_email import analyze_custom_email
 
 def display_banner():
-     print("=" * 70)
+     print("=" * 100)
      print()
-     print(f"{'PHISHING AWARENESS ANALYZER':^70}\n")
-     print("=" * 70)
+     print(f"{'PHISHING AWARENESS ANALYZER':^100}\n")
+     print("=" * 100)
 
 def main_menu():
 
      while True:
 
-          print(f"{'Main Menu':^70}")
-          print("=" * 70)
+          print(f"{'Main Menu':^100}")
+          print("=" * 100)
 
           print("\n1. Analyze Demo Email")
           print("2. Analyze Custom Email")
           print("3. View Analysis Reports")
           print("0. Exit")
-          print("-"*70)
+          print("-"*100)
 
           main_choice = input("\nEnter your choice: ")
 
@@ -51,15 +51,15 @@ def email_analyzer_menu():
      while True:
 
 
-          print("=" * 70)
-          print(f"{'Email Analyzer':^70}")
-          print("=" * 70)
+          print("=" * 100)
+          print(f"{'Email Analyzer':^100}")
+          print("=" * 100)
 
           print("\n1. Analyze One Email")
           print("2. Analyze Multiple Emails")
           print("3. Analyze all Emails")
           print("0. Back")
-          print("-"*70)
+          print("-"*100)
           
           sub_choice = input("\nEnter your choice: ")
      

@@ -93,7 +93,7 @@ def calculate_risk_score(
      elif score <= 45:
           level = "🟠 SUSPICIOUS"
 
-     elif score <= 70:
+     elif score <= 100:
           level = "🔴 HIGH RISK"
 
      else:

@@ -5,9 +5,9 @@ def get_demo_emails():
 
      while True:
 
-          print("="*70)
-          print(f"{'Demo Email Analyzer':^70}")
-          print("="*70)
+          print("="*100)
+          print(f"{'Demo Email Analyzer':^100}")
+          print("="*100)
 
           print()
           print("Select only one option:\n")
@@ -27,7 +27,7 @@ def get_demo_emails():
                print(f"[{number:02}] {files}")
                
           print("\n[00] Back")
-          print("-"*70)
+          print("-"*100)
 
           demo_email_choice = input("\nEnter your choice: ")
 
@@ -73,17 +73,17 @@ def display_demo_email(content, file_name):
 
           print()
 
-          print("-"*70)
-          print(f"{file_name:^70}")
-          print("-"*70)
+          print("-"*100)
+          print(f"{file_name:^100}")
+          print("-"*100)
           print()
           print(content)
 
 
-          print("-"*70)
+          print("-"*100)
           print("1. Analyze this Email")
           print("0. Back")
-          print("-"*70)
+          print("-"*100)
 
           print()
 

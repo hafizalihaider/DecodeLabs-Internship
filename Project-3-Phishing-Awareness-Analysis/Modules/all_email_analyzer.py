@@ -3,9 +3,9 @@ import os
 
 def analyze_all_emails():
 
-    print("=" * 70)
-    print(f"\n{'Analyzing All Emails':^70}\n")
-    print("=" * 70)
+    print("=" * 100)
+    print(f"\n{'Analyzing All Emails':^100}\n")
+    print("=" * 100)
 
     email_list = []
 
@@ -26,9 +26,9 @@ def analyze_all_emails():
         with open(path , "r") as file:
             contents = file.read()
 
-        print("-"*70)
-        print(f"{email:^70}")
-        print("-"*70)
+        print("-"*100)
+        print(f"{email:^100}")
+        print("-"*100)
 
         print(contents)
 

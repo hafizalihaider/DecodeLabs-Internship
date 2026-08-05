@@ -9,9 +9,9 @@ def analyze_multiple_emails():
         email_list = []
         analyzed = []
 
-        print("="*70)
-        print(f"\n{'Multiple Emails Analyzer':^70}\n")
-        print("="*70)
+        print("="*100)
+        print(f"\n{'Multiple Emails Analyzer':^100}\n")
+        print("="*100)
 
         print("\nEnter the email number(s) you want to analyze.")
         print("Example: 1,4,7")
@@ -30,7 +30,7 @@ def analyze_multiple_emails():
             print(f"[{number:02}] {file}")
 
         print("[00] Back")
-        print("-"*70)
+        print("-"*100)
 
 
         multiple_emails_choice = input("Enter the email number(s): ")
@@ -54,9 +54,9 @@ def analyze_multiple_emails():
 
                         content = load_demo_email(email_list[email - 1])
 
-                        print("-" * 70)
-                        print(f"{email_list[email - 1]:^70}")
-                        print("-" * 70)
+                        print("-" * 100)
+                        print(f"{email_list[email - 1]:^100}")
+                        print("-" * 100)
 
                         print(content)
 

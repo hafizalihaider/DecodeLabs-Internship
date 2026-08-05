@@ -10,9 +10,9 @@ def analyze_custom_email(content):
     os.makedirs(folder, exist_ok= True)
     folder_files = os.listdir(folder)
 
-    print("="*70)
-    print(f"\n{'Custom Email Analyzer':^70}\n")
-    print("="*70)
+    print("="*100)
+    print(f"\n{'Custom Email Analyzer':^100}\n")
+    print("="*100)
 
     print("\nPaste your email below.\nType END on a new line when finished.\n")
 
