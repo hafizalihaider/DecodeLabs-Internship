@@ -85,18 +85,18 @@ def calculate_risk_score(
      # ==========================================
 
      if score <= 10:
-          level = "🟢 SAFE"
+          level = "SAFE"
 
      elif score <= 25:
-          level = "🟡 LOW RISK"
+          level = "LOW RISK"
 
      elif score <= 45:
-          level = "🟠 SUSPICIOUS"
+          level = "SUSPICIOUS"
 
      elif score <= 100:
-          level = "🔴 HIGH RISK"
+          level = "HIGH RISK"
 
      else:
-          level = "🚨 CRITICAL PHISHING"
+          level = "CRITICAL PHISHING"
 
      return score, level

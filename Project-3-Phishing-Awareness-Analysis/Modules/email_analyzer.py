@@ -55,43 +55,52 @@ def analyze_email(content):
      )
 
      print("="*100)
-     print(f"{'Risk Score':{score}:^100}/100")
-     print(f"{'Level':{level}:^100}")
+     print(f"{'Risk Score : ' + str(score) + '/100':^100}")
+     print(f"{('Risk Level : ' + level):^100}")
      print("="*100)
 
-     report = input("Do you want to generate a report? (Y/N): ").upper()
-     if report == "Y":
-          generate_report(
-               high_risk_keywords=high_risk_keywords,
-               medium_risk_keywords=medium_risk_keywords,
-               low_risk_keywords=low_risk_keywords,
+     while True:
+          user_input = input("Do you want to generate a report? (Y/N): ").strip().upper()
+          if user_input == 'Y':
 
-               trusted_urls=trusted_urls,
-               suspicious_urls=suspicious_urls,
+               generate_report(
+                    high_risk_keywords=high_risk_keywords,
+                    medium_risk_keywords=medium_risk_keywords,
+                    low_risk_keywords=low_risk_keywords,
 
-               trusted_domains=trusted_domains,
-               unknown_domains=unknown_domains,
-               malicious_domains=malicious_domains,
+                    trusted_urls=trusted_urls,
+                    suspicious_urls=suspicious_urls,
 
-               high_risk_attachments=high_risk_attachments,
-               medium_risk_attachments=medium_risk_attachments,
-               low_risk_attachments=low_risk_attachments,
+                    trusted_domains=trusted_domains,
+                    unknown_domains=unknown_domains,
+                    malicious_domains=malicious_domains,
 
-               high_risk_grammar=high_risk_grammar,
-               medium_risk_grammar=medium_risk_grammar,
-               low_risk_grammar=low_risk_grammar,
+                    high_risk_attachments=high_risk_attachments,
+                    medium_risk_attachments=medium_risk_attachments,
+                    low_risk_attachments=low_risk_attachments,
 
-               high_risk_urgency=high_risk_urgency,
-               medium_risk_urgency=medium_risk_urgency,
-               low_risk_urgency=low_risk_urgency,
+                    high_risk_grammar=high_risk_grammar,
+                    medium_risk_grammar=medium_risk_grammar,
+                    low_risk_grammar=low_risk_grammar,
 
-               high_risk_spoofing=high_risk_spoofing,
-               medium_risk_spoofing=medium_risk_spoofing,
-               low_risk_spoofing=low_risk_spoofing,
+                    high_risk_urgency=high_risk_urgency,
+                    medium_risk_urgency=medium_risk_urgency,
+                    low_risk_urgency=low_risk_urgency,
 
-               score=score,
-               level=level
-          )
+                    high_risk_spoofing=high_risk_spoofing,
+                    medium_risk_spoofing=medium_risk_spoofing,
+                    low_risk_spoofing=low_risk_spoofing,
 
-     else:
-          print("Report generation skipped.")
+                    score=score,
+                    level=level
+               )
+               print(f"\n✓ Report saved successfully.")
+               break
+
+          elif user_input == 'N':
+               print("Report generation skipped.")
+               break
+
+          else:
+               print("Invalid input. Please enter 'Y' or 'N'.")
+               continue
