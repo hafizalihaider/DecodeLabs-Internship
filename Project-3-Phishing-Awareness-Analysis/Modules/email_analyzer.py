@@ -60,7 +60,7 @@ def analyze_email(content):
      print("="*100)
 
      while True:
-          user_input = input("Do you want to generate a report? (Y/N): ").strip().upper()
+          user_input = input("Do you want to generate a detailed report? (Y/N): ").strip().upper()
           if user_input == 'Y':
 
                generate_report(

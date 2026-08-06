@@ -37,7 +37,7 @@ def generate_report(
     date = current_time.strftime("%d %B, %Y")
     time = current_time.strftime("%I:%M %p")
 
-    report_folder = "Reports"
+    report_folder = "Reports/Demo-Email-Reports"
     
     os.makedirs(report_folder, exist_ok = True)
 
@@ -50,10 +50,17 @@ def generate_report(
 
         file.write("="*100 + "\n")
         file.write(f"{'PHISHING ANALYSIS REPORT':^100}\n")
+        file.write("\n")
         file.write("="*100 + "\n")
         file.write("\n")
 
         file.write(f"{'Date: ' + date:<50}{'Time: ' + time:>50}\n")
+        file.write("="*100 + "\n")
+
+        file.write(f"\n{file_name_txt:^100}\n")
+        file.write("="*100 + "\n")
+
+        file.write(f"{'SUMMARY':^100}\n")
         file.write("="*100 + "\n")
         file.write("\n")
 
