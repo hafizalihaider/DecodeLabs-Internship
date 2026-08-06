@@ -2,6 +2,7 @@ from Modules.email_loader import get_demo_emails
 from Modules.multiple_email_analyzer import analyze_multiple_emails
 from Modules.all_email_analyzer import analyze_all_emails
 from Modules.custom_email import analyze_custom_email
+from Modules.report_viewer import report_menu
 
 def display_banner():
      print("=" * 100)
@@ -34,7 +35,7 @@ def main_menu():
                     analyze_custom_email()
 
                elif main_choice == 3:
-                    view_reports()
+                    report_menu()
 
                elif main_choice == 0:
                     print("\nThank you for using Phishing Awareness Analyzer.")

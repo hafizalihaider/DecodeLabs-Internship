@@ -106,3 +106,37 @@ Do NOT provide personal information.
 Report the email to your security administrator.
 
 ======================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Main Menu
+│
+├── Analyze Demo Email
+│      │
+│      ├── One Email
+│      │      └── Ask report? (Y/N)
+│      │
+│      ├── Multiple Emails
+│      │      └── Ask once:
+│      │            1. Report for each email
+│      │            2. One combined report
+│      │            3. No report
+│      │
+│      └── All Emails
+│             └── Ask once:
+│                   1. Report for each email
+│                   2. One combined report
+│                   3. No report
