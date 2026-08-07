@@ -33,36 +33,65 @@ def generate_report(
         level
     ):
 
+    folder = ""
+
     current_time = datetime.now()
     date = current_time.strftime("%d %B, %Y")
     time = current_time.strftime("%I:%M %p")
 
-    report_folder = "Reports/Demo-Email-Reports"
+    report_folder = "Reports"
     
     os.makedirs(report_folder, exist_ok = True)
 
-    report_count = len([file for file in os.listdir(report_folder) if file.endswith(".txt")])
+    if level == "SAFE":
+        folder = "SAFE"
+
+    elif level == "LOW RISK":
+        folder = "LOW_RISK"
+
+    elif level == "SUSPICIOUS":
+        folder = "SUSPICIOUS"
+
+    elif level == "HIGH RISK":
+        folder = "HIGH_RISK"
+
+    elif level == "CRITICAL PHISHING":
+        folder = "CRITICAL_PHISHING"
+
+    folder_path = os.path.join(report_folder, folder)
+    os.makedirs(folder_path, exist_ok = True)
+
+    report_count = len([file for file in os.listdir(folder_path) if file.endswith(".txt")])
+    report_id = f"{current_time.strftime('%y_%m_%d')}_{report_count + 1:03}"
 
     file_name_txt = f"{current_time.strftime('Phishing_Analysis_Report_%y_%m_%d')}_{report_count + 1 :03}.txt"
-    file_path = os.path.join(report_folder, file_name_txt)
+    file_path = os.path.join(folder_path, file_name_txt)
 
     with open(file_path, "w") as file:
 
         file.write("="*100 + "\n")
-        file.write(f"{'PHISHING ANALYSIS REPORT':^100}\n")
+        file.write(f"\n{'PHISHING ANALYSIS REPORT':^100}\n")
         file.write("\n")
         file.write("="*100 + "\n")
         file.write("\n")
 
-        file.write(f"{'Date: ' + date:<50}{'Time: ' + time:>50}\n")
-        file.write("="*100 + "\n")
-
-        file.write(f"\n{file_name_txt:^100}\n")
-        file.write("="*100 + "\n")
-
-        file.write(f"{'SUMMARY':^100}\n")
-        file.write("="*100 + "\n")
+        file.write(f"Report ID  : {report_id}\n")
+        file.write(f"Date       : {date}\n")
+        file.write(f"Time       : {time}\n")
+        file.write(f"Email Name : {file_name_txt}\n")
         file.write("\n")
+
+        file.write("=" * 100 + "\n")
+        file.write(f"{'FINAL VERDICT':^100}\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"Risk Score : {score}/100\n")
+        file.write(f"Risk Level : {level}\n")
+        file.write("=" * 100 + "\n")
+
+        file.write("\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"{'KEYWORD ANALYSIS':^100}\n")
+        file.write("=" * 100 + "\n")
 
         file.write(f"\nHigh Risk Keywords: {len(high_risk_keywords)}\n")
         file.write("-"*100 + "\n")
@@ -91,6 +120,11 @@ def generate_report(
             file.write("No low risk keywords found.\n")
         file.write("\n")
 
+        file.write("\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"{'URL ANALYSIS':^100}\n")
+        file.write("=" * 100 + "\n")
+
         file.write(f"\nTrusted URLs: {len(trusted_urls)}\n")
         file.write("-"*100 + "\n")
         if trusted_urls:
@@ -108,6 +142,11 @@ def generate_report(
         else:
             file.write("No suspicious URLs found.\n")
         file.write("\n")
+
+        file.write("\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"{'DOMAIN ANALYSIS':^100}\n")
+        file.write("=" * 100 + "\n")
 
         file.write(f"\nTrusted Domains: {len(trusted_domains)}\n")
         file.write("-"*100 + "\n")
@@ -136,6 +175,11 @@ def generate_report(
             file.write("No malicious domains found.\n")
         file.write("\n")
 
+        file.write("\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"{'ATTACHMENT ANALYSIS':^100}\n")
+        file.write("=" * 100 + "\n")
+
         file.write(f"\nHigh Risk Attachments: {len(high_risk_attachments)}\n")
         file.write("-"*100 + "\n")
         if high_risk_attachments:
@@ -162,6 +206,11 @@ def generate_report(
         else:
             file.write("No low risk attachments found.\n")
         file.write("\n")
+
+        file.write("\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"{'GRAMMAR ANALYSIS':^100}\n")
+        file.write("=" * 100 + "\n")
 
         file.write(f"\nHigh Risk Grammar Patterns: {len(high_risk_grammar)}\n")
         file.write("-"*100 + "\n")
@@ -190,6 +239,11 @@ def generate_report(
             file.write("No low risk grammar patterns found.\n")
         file.write("\n")
 
+        file.write("\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"{'URGENCY ANALYSIS':^100}\n")
+        file.write("=" * 100 + "\n")
+
         file.write(f"\nHigh Risk Urgency Patterns: {len(high_risk_urgency)}\n")
         file.write("-"*100 + "\n")
         if high_risk_urgency:
@@ -217,6 +271,11 @@ def generate_report(
             file.write("No low risk urgency patterns found.\n")
         file.write("\n")
 
+        file.write("\n")
+        file.write("=" * 100 + "\n")
+        file.write(f"{'SPOOFING ANALYSIS':^100}\n")
+        file.write("=" * 100 + "\n")
+
         file.write(f"\nHigh Risk Spoofing Patterns: {len(high_risk_spoofing)}\n")
         file.write("-"*100 + "\n")
         if high_risk_spoofing:
@@ -243,10 +302,3 @@ def generate_report(
         else:
             file.write("No low risk spoofing patterns found.\n")
         file.write("\n")
-
-        file.write("=" * 100 + "\n")
-        file.write(f"{'FINAL VERDICT':^100}\n")
-        file.write("-" * 100 + "\n")
-        file.write(f"Risk Score : {score}/100\n")
-        file.write(f"Risk Level : {level}\n")
-        file.write("=" * 100 + "\n")

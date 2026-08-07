@@ -146,7 +146,7 @@ def delete_report():
 
             delete_choice = int(delete_choice)
 
-            if delete_choice >= 1 and delete_choice <= len(report_list):
+            if 1 <= delete_choice <= len(report_list):
                 selected_report = report_list[delete_choice - 1]
                 path = os.path.join(FOLDER, selected_report)
 
@@ -159,10 +159,12 @@ def delete_report():
                         try:
                             os.remove(path)
                             print("\n✓ Report deleted successfully.")
+                            break
+
 
                         except Exception as e:
                             print(f"\n[!] Error deleting report: {e}")
-                        break
+                            break
 
                     elif confirmation == "N":
                         print("\nDeletion cancelled.")

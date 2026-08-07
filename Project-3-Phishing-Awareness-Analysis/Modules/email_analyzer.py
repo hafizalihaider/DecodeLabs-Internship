@@ -54,7 +54,6 @@ def analyze_email(content):
           low_risk_spoofing=low_risk_spoofing
      )
 
-     report_menu()
 
      report_data.clear()  # Clear previous report data
 
@@ -90,6 +89,8 @@ def analyze_email(content):
           "level": level
 
      })
+
+     report_menu()
 
      print("="*100)
      print(f"{'Risk Score : ' + str(score) + '/100':^100}")

@@ -1,4 +1,4 @@
-from Modules import report_data
+from Modules.report_data import report_data
 from Modules.report_generator import generate_report
 
 

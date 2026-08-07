@@ -32,7 +32,7 @@ def main_menu():
                     email_analyzer_menu()
 
                elif main_choice == 2:
-                    analyze_custom_email()
+                    analyze_custom_email(content)
 
                elif main_choice == 3:
                     report_menu()
@@ -50,7 +50,6 @@ def main_menu():
 def email_analyzer_menu():
 
      while True:
-
 
           print("=" * 100)
           print(f"{'Email Analyzer':^100}")
