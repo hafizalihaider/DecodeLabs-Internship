@@ -21,7 +21,12 @@ def get_demo_emails():
                     email_list.append(file)
 
           email_list.sort(key = lambda file: int(file.split("-")[1]))
-          print(f"{len(email_list)} email(s) found!\n")
+          
+          print()
+          print("=" * 100)
+          print(f"{'AVAILABLE DEMO EMAILS':^100}")
+          print("=" * 100)
+          print(f"\nTotal Reports : {len(email_list)}\n")
 
           for number,files in enumerate(email_list, 1):
                print(f"[{number:02}] {files}")
