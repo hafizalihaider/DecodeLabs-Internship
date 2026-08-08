@@ -1,3 +1,20 @@
+# ============================================================
+# PHISHING AWARENESS ANALYZER
+# ============================================================
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : email_analyzer.py
+#
+# Description :
+# Coordinates all email analysis modules, calculates the
+# overall phishing risk score, stores the analysis results,
+# and returns the complete report data.
+#
+# ============================================================
+
+
 from Modules.keyword_analyzer import check_keywords
 from Modules.url_analyzer import extract_urls, analyze_urls
 from Modules.sender_analyzer import check_sender, check_domain
@@ -8,93 +25,93 @@ from Modules.spoofing_analyzer import check_spoofing
 from Modules.calculate_risk_score import calculate_risk_score
 from Modules.report_data import report_data
 
-def analyze_email(content, file_name = None):
 
-     high_risk_keywords, medium_risk_keywords, low_risk_keywords = check_keywords(content)
+def analyze_email(content, file_name=None):
 
-     urls = extract_urls(content)
-     trusted_urls, suspicious_urls = analyze_urls(urls)
+    high_risk_keywords, medium_risk_keywords, low_risk_keywords = check_keywords(content)
 
-     senders = check_sender(content)
-     trusted_domains, unknown_domains, malicious_domains = check_domain(senders)
+    urls = extract_urls(content)
+    trusted_urls, suspicious_urls = analyze_urls(urls)
 
-     high_risk_attachments, medium_risk_attachments, low_risk_attachments = analyze_attachment(content)
+    senders = check_sender(content)
+    trusted_domains, unknown_domains, malicious_domains = check_domain(senders)
 
-     high_risk_grammar, medium_risk_grammar, low_risk_grammar = check_grammar(content)
-     high_risk_urgency, medium_risk_urgency, low_risk_urgency = check_urgency(content)
-     high_risk_spoofing, medium_risk_spoofing, low_risk_spoofing = check_spoofing(content)
+    high_risk_attachments, medium_risk_attachments, low_risk_attachments = analyze_attachment(content)
 
-     score, level = calculate_risk_score(
-          high_risk_keywords=high_risk_keywords,
-          medium_risk_keywords=medium_risk_keywords,
-          low_risk_keywords=low_risk_keywords,
+    high_risk_grammar, medium_risk_grammar, low_risk_grammar = check_grammar(content)
+    high_risk_urgency, medium_risk_urgency, low_risk_urgency = check_urgency(content)
+    high_risk_spoofing, medium_risk_spoofing, low_risk_spoofing = check_spoofing(content)
 
-          trusted_urls=trusted_urls,
-          suspicious_urls=suspicious_urls,
+    score, level = calculate_risk_score(
+        high_risk_keywords=high_risk_keywords,
+        medium_risk_keywords=medium_risk_keywords,
+        low_risk_keywords=low_risk_keywords,
 
-          trusted_domains=trusted_domains,
-          unknown_domains=unknown_domains,
-          malicious_domains=malicious_domains,
+        trusted_urls=trusted_urls,
+        suspicious_urls=suspicious_urls,
 
-          high_risk_attachments=high_risk_attachments,
-          medium_risk_attachments=medium_risk_attachments,
-          low_risk_attachments=low_risk_attachments,
+        trusted_domains=trusted_domains,
+        unknown_domains=unknown_domains,
+        malicious_domains=malicious_domains,
 
-          high_risk_grammar=high_risk_grammar,
-          medium_risk_grammar=medium_risk_grammar,
-          low_risk_grammar=low_risk_grammar,
+        high_risk_attachments=high_risk_attachments,
+        medium_risk_attachments=medium_risk_attachments,
+        low_risk_attachments=low_risk_attachments,
 
-          high_risk_urgency=high_risk_urgency,
-          medium_risk_urgency=medium_risk_urgency,
-          low_risk_urgency=low_risk_urgency,
+        high_risk_grammar=high_risk_grammar,
+        medium_risk_grammar=medium_risk_grammar,
+        low_risk_grammar=low_risk_grammar,
 
-          high_risk_spoofing=high_risk_spoofing,
-          medium_risk_spoofing=medium_risk_spoofing,
-          low_risk_spoofing=low_risk_spoofing
-     )
+        high_risk_urgency=high_risk_urgency,
+        medium_risk_urgency=medium_risk_urgency,
+        low_risk_urgency=low_risk_urgency,
 
+        high_risk_spoofing=high_risk_spoofing,
+        medium_risk_spoofing=medium_risk_spoofing,
+        low_risk_spoofing=low_risk_spoofing
+    )
 
-     report_data.clear()  # Clear previous report data
+    # Store the results for report generation
+    report_data.clear()
 
-     report_data.update({
+    report_data.update({
 
-          "file_name": file_name,
+        "file_name": file_name,
 
-          "high_risk_keywords": high_risk_keywords,
-          "medium_risk_keywords": medium_risk_keywords,
-          "low_risk_keywords": low_risk_keywords,
+        "high_risk_keywords": high_risk_keywords,
+        "medium_risk_keywords": medium_risk_keywords,
+        "low_risk_keywords": low_risk_keywords,
 
-          "trusted_urls": trusted_urls,
-          "suspicious_urls": suspicious_urls,
+        "trusted_urls": trusted_urls,
+        "suspicious_urls": suspicious_urls,
 
-          "trusted_domains": trusted_domains,
-          "unknown_domains": unknown_domains,
-          "malicious_domains": malicious_domains,
+        "trusted_domains": trusted_domains,
+        "unknown_domains": unknown_domains,
+        "malicious_domains": malicious_domains,
 
-          "high_risk_attachments": high_risk_attachments,
-          "medium_risk_attachments": medium_risk_attachments,
-          "low_risk_attachments": low_risk_attachments,
+        "high_risk_attachments": high_risk_attachments,
+        "medium_risk_attachments": medium_risk_attachments,
+        "low_risk_attachments": low_risk_attachments,
 
-          "high_risk_grammar": high_risk_grammar,
-          "medium_risk_grammar": medium_risk_grammar,
-          "low_risk_grammar": low_risk_grammar,
+        "high_risk_grammar": high_risk_grammar,
+        "medium_risk_grammar": medium_risk_grammar,
+        "low_risk_grammar": low_risk_grammar,
 
-          "high_risk_urgency": high_risk_urgency,
-          "medium_risk_urgency": medium_risk_urgency,
-          "low_risk_urgency": low_risk_urgency,
+        "high_risk_urgency": high_risk_urgency,
+        "medium_risk_urgency": medium_risk_urgency,
+        "low_risk_urgency": low_risk_urgency,
 
-          "high_risk_spoofing": high_risk_spoofing,
-          "medium_risk_spoofing": medium_risk_spoofing,
-          "low_risk_spoofing": low_risk_spoofing,
+        "high_risk_spoofing": high_risk_spoofing,
+        "medium_risk_spoofing": medium_risk_spoofing,
+        "low_risk_spoofing": low_risk_spoofing,
 
-          "score": score,
-          "level": level
+        "score": score,
+        "level": level
+    })
 
-     })
+    print("=" * 100)
+    print(f"{'Risk Score : ' + str(score) + '/100':^100}")
+    print(f"{'Risk Level : ' + level:^100}")
+    print("=" * 100)
 
-     print("="*100)
-     print(f"{'Risk Score : ' + str(score) + '/100':^100}")
-     print(f"{('Risk Level : ' + level):^100}")
-     print("="*100)
-
-     return report_data
+    return report_data

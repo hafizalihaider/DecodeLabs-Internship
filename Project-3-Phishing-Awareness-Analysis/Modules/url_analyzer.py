@@ -1,3 +1,22 @@
+# ============================================================
+#
+# PHISHING AWARENESS ANALYZER
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : url_analyzer.py
+#
+# Description :
+# Extracts URLs from email content and analyzes them by
+# comparing their domains against trusted domains to identify
+# trusted and suspicious URLs.
+#
+# ============================================================
+
+
+
+
 from urllib.parse import urlparse
 from Modules.config import URL_PATTERNS, TRUSTED_DOMAINS
 

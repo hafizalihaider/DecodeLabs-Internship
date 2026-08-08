@@ -1,3 +1,21 @@
+# ============================================================
+#
+# PHISHING AWARENESS ANALYZER
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : sender_analyzer.py
+#
+# Description :
+# Analyzes the sender of an email by extracting the sender
+# address and checking its domain against trusted and malicious
+# domain databases to identify trusted, unknown, or malicious
+# domains.
+#
+# ============================================================
+
+
 from Modules.config import TRUSTED_DOMAINS
 from Modules.config import MALICIOUS_DOMAINS
 

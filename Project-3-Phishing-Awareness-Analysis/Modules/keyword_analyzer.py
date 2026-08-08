@@ -1,49 +1,72 @@
+# ============================================================
+# PHISHING AWARENESS ANALYZER
+# ============================================================
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : keyword_analyzer.py
+#
+# Description :
+# Checks email content for suspicious keywords and classifies
+# detected keywords according to their risk level.
+#
+# ============================================================
+
+
 from Modules.config import KEYWORDS_FILE
+
 
 def check_keywords(content):
 
-     content = content.lower()
-     high_risk_keywords = []
-     medium_risk_keywords = []
-     low_risk_keywords = []
+    content = content.lower()
 
-     with open(KEYWORDS_FILE , "r") as file:
+    high_risk_keywords = []
+    medium_risk_keywords = []
+    low_risk_keywords = []
 
-          patterns = []    
+    # Load and classify suspicious keywords from the database
+    with open(KEYWORDS_FILE, "r") as file:
 
-          for line in file:
-            
-               line = line.strip()
+        patterns = []
 
-               if not line or line.startswith("#"):
-                    continue
+        for line in file:
 
-               pattern, risk = line.split(":")
+            line = line.strip()
 
-               pattern = pattern.strip().lower()
-               risk = risk.strip().upper()
+            if not line or line.startswith("#"):
+                continue
 
-               patterns.append((pattern, risk))
+            pattern, risk = line.split(":")
 
-          patterns.sort(
-               key = lambda item: len(item[0]),
-               reverse = True
-          )
+            pattern = pattern.strip().lower()
+            risk = risk.strip().upper()
 
-     for pattern, risk in patterns:
+            patterns.append((pattern, risk))
 
-          if pattern in content:
+        patterns.sort(
+            key=lambda item: len(item[0]),
+            reverse=True
+        )
 
-               if risk == "HIGH":
-                    if pattern not in high_risk_keywords:
-                         high_risk_keywords.append(pattern)
+    for pattern, risk in patterns:
 
-               elif risk == "MEDIUM":
-                    if pattern not in medium_risk_keywords:
-                         medium_risk_keywords.append(pattern)
+        if pattern in content:
 
-               elif risk == "LOW":
-                    if pattern not in low_risk_keywords:
-                         low_risk_keywords.append(pattern)
+            if risk == "HIGH":
+                if pattern not in high_risk_keywords:
+                    high_risk_keywords.append(pattern)
 
-     return high_risk_keywords, medium_risk_keywords, low_risk_keywords
+            elif risk == "MEDIUM":
+                if pattern not in medium_risk_keywords:
+                    medium_risk_keywords.append(pattern)
+
+            elif risk == "LOW":
+                if pattern not in low_risk_keywords:
+                    low_risk_keywords.append(pattern)
+
+    return (
+        high_risk_keywords,
+        medium_risk_keywords,
+        low_risk_keywords
+    )

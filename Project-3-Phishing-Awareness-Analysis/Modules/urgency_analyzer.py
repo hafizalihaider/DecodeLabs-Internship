@@ -1,3 +1,21 @@
+# ============================================================
+#
+# PHISHING AWARENESS ANALYZER
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : urgency_analyzer.py
+#
+# Description :
+# Detects urgency-related indicators in an email by comparing
+# its content against predefined urgency patterns and
+# classifying detected patterns by risk level.
+#
+# ============================================================
+
+
+
 from Modules.config import URGENCY_PATTERNS
 
 def check_urgency(content):

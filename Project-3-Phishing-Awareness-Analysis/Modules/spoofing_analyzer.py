@@ -1,3 +1,20 @@
+# ============================================================
+#
+# PHISHING AWARENESS ANALYZER
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : spoofing_analyzer.py
+#
+# Description :
+# Detects potential spoofing indicators in an email by
+# comparing its content against predefined spoofing patterns
+# and classifying detected patterns by risk level.
+#
+# ============================================================
+
+
 from Modules.config import SPOOFING_PATTERNS
 
 def check_spoofing(content):

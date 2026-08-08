@@ -1,49 +1,68 @@
+# ============================================================
+# PHISHING AWARENESS ANALYZER
+# ============================================================
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : grammar_analyzer.py
+#
+# Description :
+# Checks email content for suspicious grammar patterns and
+# classifies detected patterns according to their risk level.
+#
+# ============================================================
+
+
 from Modules.config import GRAMMAR_PATTERNS
+
 
 def check_grammar(content):
 
-     content = content.lower()
-     high_risk_grammar = []
-     medium_risk_grammar = []
-     low_risk_grammar = []
+    content = content.lower()
 
-     with open(GRAMMAR_PATTERNS , "r") as file:
+    high_risk_grammar = []
+    medium_risk_grammar = []
+    low_risk_grammar = []
 
-          patterns = []
-        
-          for line in file:
+    # Load and classify grammar patterns from the database
+    with open(GRAMMAR_PATTERNS, "r") as file:
 
-               line = line.strip()
-            
-               if not line or line.startswith("#"):
-                    continue
+        patterns = []
 
-               pattern, risk = line.split(":")
+        for line in file:
 
-               pattern = pattern.strip().lower()
-               risk = risk.strip().upper()
+            line = line.strip()
 
-               patterns.append((pattern, risk))
+            if not line or line.startswith("#"):
+                continue
 
-          patterns.sort(
-               key = lambda item: len(item[0]),
-               reverse = True
-          )
+            pattern, risk = line.split(":")
 
-          for pattern, risk in patterns:
+            pattern = pattern.strip().lower()
+            risk = risk.strip().upper()
 
-               if pattern in content:
+            patterns.append((pattern, risk))
 
-                    if risk == "HIGH":
-                         if pattern not in high_risk_grammar:
-                              high_risk_grammar.append(pattern)
+        patterns.sort(
+            key=lambda item: len(item[0]),
+            reverse=True
+        )
 
-                    elif risk == "MEDIUM":
-                         if pattern not in medium_risk_grammar:
-                              medium_risk_grammar.append(pattern)
+        for pattern, risk in patterns:
 
-                    elif risk == "LOW":
-                         if pattern not in low_risk_grammar:
-                              low_risk_grammar.append(pattern)
+            if pattern in content:
 
-     return high_risk_grammar, medium_risk_grammar, low_risk_grammar
+                if risk == "HIGH":
+                    if pattern not in high_risk_grammar:
+                        high_risk_grammar.append(pattern)
+
+                elif risk == "MEDIUM":
+                    if pattern not in medium_risk_grammar:
+                        medium_risk_grammar.append(pattern)
+
+                elif risk == "LOW":
+                    if pattern not in low_risk_grammar:
+                        low_risk_grammar.append(pattern)
+
+    return high_risk_grammar, medium_risk_grammar, low_risk_grammar

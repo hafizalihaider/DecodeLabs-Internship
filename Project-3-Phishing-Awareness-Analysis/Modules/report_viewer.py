@@ -1,3 +1,20 @@
+# ============================================================
+#
+# PHISHING AWARENESS ANALYZER
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : report_viewer.py
+#
+# Description :
+# Handles viewing and deleting generated phishing analysis
+# reports. Reports are organized into combined reports and
+# separate reports based on their risk level.
+#
+# ============================================================
+
+ 
 import os
 
 FOLDER = "Reports"

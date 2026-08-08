@@ -1,4 +1,20 @@
+# ============================================================
+# PHISHING AWARENESS ANALYZER
+# ============================================================
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : attachment_analyzer.py
+#
+# Description :
+# Detects potentially dangerous email attachments by comparing
+# file extensions against predefined attachment risk patterns.
+#
+# ============================================================
+
 from Modules.config import ATTACHMENT_KEYWORDS
+
 
 def analyze_attachment(content):
 
@@ -10,6 +26,7 @@ def analyze_attachment(content):
 
      words = content.split()
 
+     # Load attachment extensions and their assigned risk levels.
      with open(ATTACHMENT_KEYWORDS, "r") as file:
 
           patterns = []
@@ -28,11 +45,13 @@ def analyze_attachment(content):
 
                patterns.append((pattern, risk))
 
+          # Check longer extensions first to avoid partial matches.
           patterns.sort(
-          key=lambda item: len(item[0]),
-          reverse=True
+               key=lambda item: len(item[0]),
+               reverse=True
           )
 
+     # Match words in the email against known attachment extensions.
      for word in words:
 
           word = word.strip(".,!?;:(){}[]<>\"'")

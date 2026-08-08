@@ -1,3 +1,20 @@
+# ============================================================
+# PHISHING AWARENESS ANALYZER
+# ============================================================
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : config.py
+#
+# Description :
+# Stores the file paths used by the different analysis
+# modules to access phishing detection databases.
+#
+# ============================================================
+
+
+# Database file paths
 KEYWORDS_FILE = "Database/suspicious_keywords.txt"
 TRUSTED_DOMAINS = "Database/trusted_domains.txt"
 URL_PATTERNS = "Database/url_patterns.txt"

@@ -1,5 +1,22 @@
+# ============================================================
+# PHISHING AWARENESS ANALYZER
+# ============================================================
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : custom_email.py
+#
+# Description :
+# Allows the user to enter a custom email, saves it in the
+# Custom-Emails folder, and analyzes it for phishing risks.
+#
+# ============================================================
+
+
 from Modules.email_analyzer import analyze_email
 import os
+
 
 def analyze_custom_email():
 
@@ -7,12 +24,12 @@ def analyze_custom_email():
     folder = "Custom-Emails"
     txt_files = 0
 
-    os.makedirs(folder, exist_ok= True)
+    os.makedirs(folder, exist_ok=True)
     folder_files = os.listdir(folder)
 
-    print("="*100)
+    print("=" * 100)
     print(f"\n{'Custom Email Analyzer':^100}\n")
-    print("="*100)
+    print("=" * 100)
 
     print("\nPaste your email below.\nType END on a new line when finished.\n")
 
@@ -35,11 +52,10 @@ def analyze_custom_email():
         if file.endswith(".txt"):
             txt_files += 1
 
-    folder_name = f"Email-{txt_files+1}.txt"
-    full_path = os.path.join(folder,folder_name)
+    folder_name = f"Email-{txt_files + 1}.txt"
+    full_path = os.path.join(folder, folder_name)
 
     with open(full_path, "w") as file:
-
         file.write(content)
 
     print(f"\n[✓] Email saved as '{folder_name}'.")

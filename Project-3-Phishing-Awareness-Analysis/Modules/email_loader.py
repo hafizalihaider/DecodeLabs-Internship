@@ -1,151 +1,184 @@
+# ============================================================
+# PHISHING AWARENESS ANALYZER
+# ============================================================
+#
+# Author      : Hafiz Muhammad Ali Haider
+# Date        : 09 August 2026
+# Project     : Phishing Awareness Analysis
+# File        : email_loader.py
+#
+# Description :
+# Handles demo email selection, loading, display, analysis,
+# and report generation for individual demo emails.
+#
+# ============================================================
+
+
 import os
 from Modules.email_analyzer import analyze_email
 from Modules.report_generator import generate_report
+
+
+# Display available demo emails and allow the user to select one
 def get_demo_emails():
 
-     while True:
+    while True:
 
-          print("="*100)
-          print(f"{'Demo Email Analyzer':^100}")
-          print("="*100)
+        print("=" * 100)
+        print(f"{'Demo Email Analyzer':^100}")
+        print("=" * 100)
 
-          print()
+        print()
 
-          email_list = []
+        email_list = []
 
-          folder = os.listdir("Demo-Emails")
+        folder = os.listdir("Demo-Emails")
 
-          for file in folder:
-               if file.endswith(".txt"):
-                    email_list.append(file)
+        for file in folder:
+            if file.endswith(".txt"):
+                email_list.append(file)
 
-          email_list.sort(key = lambda file: int(file.split("-")[1]))
+        email_list.sort(key=lambda file: int(file.split("-")[1]))
 
-          print()
-          print("=" * 100)
-          print(f"{'AVAILABLE DEMO EMAILS':^100}")
-          print("=" * 100)
-          print(f"\nTotal Reports : {len(email_list)}\n")
-          print("Select only one option:\n")
+        print()
+        print("=" * 100)
+        print(f"{'AVAILABLE DEMO EMAILS':^100}")
+        print("=" * 100)
+        print(f"\nTotal Reports : {len(email_list)}\n")
+        print("Select only one option:\n")
 
-          for number,files in enumerate(email_list, 1):
-               print(f"[{number:02}] {files}")
-               
-          print("\n[00] Back")
-          print("-"*100)
+        for number, files in enumerate(email_list, 1):
+            print(f"[{number:02}] {files}")
 
-          demo_email_choice = input("\nEnter your choice: ")
+        print("\n[00] Back")
+        print("-" * 100)
 
-          if demo_email_choice == "00":
-               break
+        demo_email_choice = input("\nEnter your choice: ")
 
-          if demo_email_choice.isdigit():
+        if demo_email_choice == "00":
+            break
 
-               demo_email_choice = int(demo_email_choice)
+        if demo_email_choice.isdigit():
 
-               if demo_email_choice >= 1 and demo_email_choice <= len(email_list):
-                    return_value = read_demo_email(email_list[demo_email_choice - 1])
+            demo_email_choice = int(demo_email_choice)
 
-                    if return_value:
-                         break
+            if 1 <= demo_email_choice <= len(email_list):
 
-               else:
-                    print(f"[!] Email {demo_email_choice} does not exist.")
+                return_value = read_demo_email(
+                    email_list[demo_email_choice - 1]
+                )
 
-          else:
-               print(f"[!] '{demo_email_choice}' is not a valid number.")
-
-
-def read_demo_email(file_name):
-
-     path = os.path.join(r"Demo-Emails",file_name)
-
-     with open(path , "r") as file:
-          content = file.read()
-
-     return display_demo_email(content, file_name)
-
-
-def load_demo_email(file_name):
-
-     path = os.path.join("Demo-Emails", file_name)
-
-     with open(path, "r") as file:
-          print()
-          return file.read()
-
-    
-def display_demo_email(content, file_name):
-
-     while True:
-
-          print()
-
-          print("-"*100)
-          print(f"{file_name:^100}")
-          print("-"*100)
-          print()
-          print(content)
-
-
-          print("-"*100)
-          print("1. Analyze this Email")
-          print("0. Back")
-          print("-"*100)
-
-          print()
-
-          analyzer_choice = input("Enter your choice: ")
-          print()
-          print()
-
-          if analyzer_choice.isdigit():
-
-               analyzer_choice = int(analyzer_choice)
-
-               if analyzer_choice == 0:
+                if return_value:
                     break
 
-               if analyzer_choice == 1:
+            else:
+                print(f"[!] Email {demo_email_choice} does not exist.")
 
-                    email_report_data = analyze_email(content)
+        else:
+            print(f"[!] '{demo_email_choice}' is not a valid number.")
 
-                    email_report_data["file_name"] = file_name
+
+# Load the selected demo email and display it
+def read_demo_email(file_name):
+
+    path = os.path.join("Demo-Emails", file_name)
+
+    with open(path, "r") as file:
+        content = file.read()
+
+    return display_demo_email(content, file_name)
 
 
-                    while True:
+# Load a demo email's contents for use by other modules
+def load_demo_email(file_name):
 
-                         print()
-                         print("=" * 100)
-                         print(f"{'REPORT MENU':^100}")
-                         print("=" * 100)
-                         print()
-                         print("1. Generate Report")
-                         print("0. Cancel")
-                         print("-" * 100)
+    path = os.path.join("Demo-Emails", file_name)
 
-                         report_choice = input("\nEnter your choice: ").strip()
+    with open(path, "r") as file:
+        print()
+        return file.read()
 
-                         if report_choice == "1":
 
-                              report_data = email_report_data.copy()
-                              report_data.pop("file_name", None)
+# Display the email and provide analysis/report options
+def display_demo_email(content, file_name):
 
-                              generate_report(**report_data)
+    while True:
 
-                              print("\n✓ Report generated successfully.")
-                              input("\nPress Enter to return to Email Analyzer Menu...")
-                              return True
+        print()
 
-                         elif report_choice == "0":
+        print("-" * 100)
+        print(f"{file_name:^100}")
+        print("-" * 100)
+        print()
+        print(content)
 
-                              print("\n[!] Report generation cancelled.")
-                              input("\nPress Enter to return to Email Analyzer Menu...")
-                              return True
+        print("-" * 100)
+        print("1. Analyze this Email")
+        print("0. Back")
+        print("-" * 100)
 
-                         else:
+        print()
 
-                              print("\n[!] Invalid choice. Please enter 1 or 0.")
+        analyzer_choice = input("Enter your choice: ")
+        print()
+        print()
 
-          else:
-               print("Please enter 1 or 0.")
+        if analyzer_choice.isdigit():
+
+            analyzer_choice = int(analyzer_choice)
+
+            if analyzer_choice == 0:
+                break
+
+            if analyzer_choice == 1:
+
+                email_report_data = analyze_email(content)
+
+                email_report_data["file_name"] = file_name
+
+                while True:
+
+                    print()
+                    print("=" * 100)
+                    print(f"{'REPORT MENU':^100}")
+                    print("=" * 100)
+                    print()
+                    print("1. Generate Report")
+                    print("0. Cancel")
+                    print("-" * 100)
+
+                    report_choice = input(
+                        "\nEnter your choice: "
+                    ).strip()
+
+                    if report_choice == "1":
+
+                        report_data = email_report_data.copy()
+                        report_data.pop("file_name", None)
+
+                        generate_report(**report_data)
+
+                        print("\n✓ Report generated successfully.")
+                        input(
+                            "\nPress Enter to return to Email Analyzer Menu..."
+                        )
+
+                        return True
+
+                    elif report_choice == "0":
+
+                        print("\n[!] Report generation cancelled.")
+                        input(
+                            "\nPress Enter to return to Email Analyzer Menu..."
+                        )
+
+                        return True
+
+                    else:
+
+                        print(
+                            "\n[!] Invalid choice. Please enter 1 or 0."
+                        )
+
+        else:
+            print("Please enter 1 or 0.")
