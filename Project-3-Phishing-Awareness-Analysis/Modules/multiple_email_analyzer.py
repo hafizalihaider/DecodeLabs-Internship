@@ -55,16 +55,19 @@ def analyze_multiple_emails():
                     if email not in analyzed:
                         analyzed.append(email)
 
-                        content = load_demo_email(email_list[email - 1])
+                        email_file = email_list[email - 1]
+
+                        content = load_demo_email(email_file)
 
                         print("-" * 100)
-                        print(f"{email_list[email - 1]:^100}")
+                        print(f"{email_file:^100}")
                         print("-" * 100)
 
                         print(content)
 
-                        email_report_data = analyze_email(content)
-                        email_report_data["file_name"] = email_list[email -1]
+                        email_report_data = analyze_email(content, file_name=None)
+
+                        email_report_data["file_name"] = email_file
 
                         all_report_data.append(email_report_data.copy())
 

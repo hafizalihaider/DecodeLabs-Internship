@@ -1,6 +1,6 @@
 import os
 from Modules.email_analyzer import analyze_email
-
+from Modules.report_generator import generate_report
 def get_demo_emails():
 
      while True:
@@ -44,7 +44,10 @@ def get_demo_emails():
                demo_email_choice = int(demo_email_choice)
 
                if demo_email_choice >= 1 and demo_email_choice <= len(email_list):
-                    read_demo_email(email_list[demo_email_choice - 1])
+                    return_value = read_demo_email(email_list[demo_email_choice - 1])
+
+                    if return_value:
+                         break
 
                else:
                     print(f"[!] Email {demo_email_choice} does not exist.")
@@ -60,7 +63,7 @@ def read_demo_email(file_name):
      with open(path , "r") as file:
           content = file.read()
 
-     display_demo_email(content, file_name)
+     return display_demo_email(content, file_name)
 
 
 def load_demo_email(file_name):
@@ -104,7 +107,45 @@ def display_demo_email(content, file_name):
                     break
 
                if analyzer_choice == 1:
-                    analyze_email(content)
-                    break
+
+                    email_report_data = analyze_email(content)
+
+                    email_report_data["file_name"] = file_name
+
+
+                    while True:
+
+                         print()
+                         print("=" * 100)
+                         print(f"{'REPORT MENU':^100}")
+                         print("=" * 100)
+                         print()
+                         print("1. Generate Report")
+                         print("0. Cancel")
+                         print("-" * 100)
+
+                         report_choice = input("\nEnter your choice: ").strip()
+
+                         if report_choice == "1":
+
+                              report_data = email_report_data.copy()
+                              report_data.pop("file_name", None)
+
+                              generate_report(**report_data)
+
+                              print("\n✓ Report generated successfully.")
+                              input("\nPress Enter to return to Email Analyzer Menu...")
+                              return True
+
+                         elif report_choice == "0":
+
+                              print("\n[!] Report generation cancelled.")
+                              input("\nPress Enter to return to Email Analyzer Menu...")
+                              return True
+
+                         else:
+
+                              print("\n[!] Invalid choice. Please enter 1 or 0.")
+
           else:
                print("Please enter 1 or 0.")

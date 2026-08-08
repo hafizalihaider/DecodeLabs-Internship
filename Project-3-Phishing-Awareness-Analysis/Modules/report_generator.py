@@ -256,7 +256,9 @@ def generate_report(
         low_risk_spoofing,
 
         score,
-        level
+        level,
+
+        file_name = None, 
     ):
 
     folder = ""
@@ -301,10 +303,13 @@ def generate_report(
         file.write("\n")
         file.write("=" * 100 + "\n\n")
 
-        file.write(f"Report ID  : {report_id}\n")
-        file.write(f"Date       : {date}\n")
-        file.write(f"Time       : {time}\n")
-        file.write(f"File Name  : {file_name_txt}\n\n")
+        file.write(f"Report ID    : {report_id}\n")
+        file.write(f"Email Name   : {file_name}\n")
+        file.write(f"Date         : {date}\n")
+        file.write(f"Time         : {time}\n")
+        file.write(f"Report File  : {file_name_txt}\n\n")
+        file.write("="*100 +"\n\n")
+
 
         write_report_content(file, {
             "high_risk_keywords": high_risk_keywords,

@@ -6,10 +6,9 @@ from Modules.grammar_analyzer import check_grammar
 from Modules.urgency_analyzer import check_urgency
 from Modules.spoofing_analyzer import check_spoofing
 from Modules.calculate_risk_score import calculate_risk_score
-from Modules.report_handler import report_menu
 from Modules.report_data import report_data
 
-def analyze_email(content):
+def analyze_email(content, file_name = None):
 
      high_risk_keywords, medium_risk_keywords, low_risk_keywords = check_keywords(content)
 
@@ -59,7 +58,8 @@ def analyze_email(content):
 
      report_data.update({
 
-          "file_name": email_file,
+          "file_name": file_name,
+
           "high_risk_keywords": high_risk_keywords,
           "medium_risk_keywords": medium_risk_keywords,
           "low_risk_keywords": low_risk_keywords,

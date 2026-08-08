@@ -11,10 +11,11 @@ def batch_report_menu(all_report_data):
         print(f"{'BATCH REPORT MENU':^100}")
         print("=" * 100)
         print()
+        print("Do you wat to create a report?\n")
 
         print("1. Generate Separate Report for Each Email")
         print("2. Generate One Combined Report")
-        print("0. Back")
+        print("0. Cancel")
 
         choice = input("\nEnter your choice: ").strip()
 
