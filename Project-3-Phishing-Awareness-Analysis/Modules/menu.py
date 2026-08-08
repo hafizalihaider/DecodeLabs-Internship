@@ -14,6 +14,7 @@ def main_menu():
 
      while True:
 
+          print("="*100)
           print(f"{'Main Menu':^100}")
           print("=" * 100)
 
@@ -32,7 +33,7 @@ def main_menu():
                     email_analyzer_menu()
 
                elif main_choice == 2:
-                    analyze_custom_email(content)
+                    analyze_custom_email()
 
                elif main_choice == 3:
                     report_menu()

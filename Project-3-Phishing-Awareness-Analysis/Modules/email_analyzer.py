@@ -58,6 +58,8 @@ def analyze_email(content):
      report_data.clear()  # Clear previous report data
 
      report_data.update({
+
+          "file_name": email_file,
           "high_risk_keywords": high_risk_keywords,
           "medium_risk_keywords": medium_risk_keywords,
           "low_risk_keywords": low_risk_keywords,
@@ -90,9 +92,9 @@ def analyze_email(content):
 
      })
 
-     report_menu()
-
      print("="*100)
      print(f"{'Risk Score : ' + str(score) + '/100':^100}")
      print(f"{('Risk Level : ' + level):^100}")
      print("="*100)
+
+     return report_data
