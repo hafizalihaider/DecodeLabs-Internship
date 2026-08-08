@@ -268,8 +268,9 @@ def generate_report(
     time = current_time.strftime("%I:%M %p")
 
     report_folder = "Reports"
-    
-    os.makedirs(report_folder, exist_ok = True)
+    separate_folder = os.path.join(report_folder, "Separate")
+
+    os.makedirs(separate_folder, exist_ok=True)
 
     if level == "SAFE":
         folder = "Safe"
@@ -278,7 +279,7 @@ def generate_report(
         folder = "Low_Risk"
 
     elif level == "SUSPICIOUS":
-        folder = "Suspicious"
+        folder = "  Suspicious"
 
     elif level == "HIGH RISK":
         folder = "High_Risk"
@@ -286,9 +287,12 @@ def generate_report(
     elif level == "CRITICAL PHISHING":
         folder = "Critical_Phishing"
 
+    else:
+        folder = "Unknown"
 
-    folder_path = os.path.join(report_folder, folder)
-    os.makedirs(folder_path, exist_ok = True)
+
+    folder_path = os.path.join(separate_folder, folder)
+    os.makedirs(folder_path, exist_ok=True)
 
     report_count = len([file for file in os.listdir(folder_path) if file.endswith(".txt")])
     report_id = f"{current_time.strftime('%y_%m_%d')}_{report_count + 1:03}"

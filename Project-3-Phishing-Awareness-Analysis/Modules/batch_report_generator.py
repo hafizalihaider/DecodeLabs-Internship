@@ -77,4 +77,3 @@ def generate_combined_report(all_report_data):
             file.write("\n\n")
 
     print(f"\n✓ Combined report generated successfully.")
-    print(f"✓ Location: {file_path}")

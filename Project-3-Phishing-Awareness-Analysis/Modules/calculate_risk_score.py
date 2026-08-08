@@ -85,7 +85,7 @@ def calculate_risk_score(
      # ==========================================
 
      if score <= 10:
-          level = "SAFE"
+          level = "safe"
 
      elif score <= 25:
           level = "LOW RISK"
