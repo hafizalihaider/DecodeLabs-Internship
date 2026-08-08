@@ -1,0 +1,32 @@
+From: refunds@irs-tax-support.net
+To: taxpayer@email.com
+Subject: Tax Refund Available - Immediate Verification Required
+
+Dear Taxpayer,
+
+Our records indicate that you are eligible to receive a tax refund of USD 1,485.60 for the current financial year.
+
+Unfortunately, we were unable to process the refund because your banking information could not be verified.
+
+To receive your refund, please complete the verification process using the secure government portal below.
+
+http://irs-tax-support.net/refund
+
+You will be asked to provide:
+
+• Full Name
+• Date of Birth
+• National Identity Number
+• Residential Address
+• Bank Name
+• Bank Account Number
+• Debit Card Number
+
+Your refund request must be verified within 48 hours.
+
+Failure to complete verification before the deadline will result in permanent cancellation of your refund request.
+
+Thank you for your cooperation.
+
+Tax Refund Processing Department
+Internal Revenue Service
